@@ -1,7 +1,11 @@
 import Hero from "@/components/home/Hero";
-import Categories from "@/components/home/Categories";
 import Philosophy from "@/components/home/Philosophy";
+import Stats from "@/components/home/Stats";
+import AboutUs from "@/components/home/AboutUs";
+import Categories from "@/components/home/Categories";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
+import Services from "@/components/home/Services";
+import CTA from "@/components/home/CTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -9,8 +13,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <Philosophy />
+      <Stats />
+      <AboutUs />
       <Categories />
       <FeaturedProducts />
+      <Services />
+      <CTA />
       <Footer />
     </main>
   );

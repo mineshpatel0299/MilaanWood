@@ -34,7 +34,8 @@ export default function Hero() {
   const goToSlide = (idx: number) => setCurrentIdx(idx);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-neutral-900 font-sans">
+    <div className="bg-white p-3 md:p-5 w-full min-h-screen">
+      <div className="relative h-[calc(100vh-1.5rem)] md:h-[calc(100vh-2.5rem)] w-full overflow-hidden bg-neutral-900 font-sans rounded-[2rem]">
       {CAROUSEL_IMAGES.map((src, idx) => (
         <Image
           key={src}
@@ -162,9 +163,19 @@ export default function Hero() {
           transitionDelay: '700ms',
         }}
       >
+        {/* Inverted curve for bottom-left of CTA */}
+        <svg className="absolute bottom-0 -left-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+          <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+        </svg>
+
+        {/* Inverted curve for top-right of CTA */}
+        <svg className="absolute -top-[2rem] right-0 w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+          <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+        </svg>
+
         <Link
           href="#"
-          className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide group"
+          className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide group relative z-10"
         >
           Explore tables
           <ArrowUpRight size={16} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -184,6 +195,7 @@ export default function Hero() {
             }`}
           />
         ))}
+      </div>
       </div>
     </div>
   );

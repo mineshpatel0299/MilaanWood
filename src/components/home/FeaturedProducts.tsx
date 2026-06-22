@@ -24,7 +24,7 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
       }}
     >
       {/* Image container */}
-      <div className="relative h-[550px] w-full mb-8 overflow-hidden bg-[#f7f7f7] rounded-sm">
+      <div className="relative h-[550px] w-full mb-6 overflow-hidden bg-[#f7f7f7] rounded-[2rem]">
         <Image
           src={product.image}
           alt={product.name}
@@ -34,11 +34,32 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none" />
 
-        {/* Quick view pill — slides up on hover */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 ease-out pointer-events-none">
-          <span className="bg-white text-neutral-900 text-[10px] font-bold tracking-[0.2em] uppercase px-5 py-2.5 rounded-full shadow-md whitespace-nowrap">
-            Quick View
+        {/* Top-Left Cutout */}
+        <div className="absolute top-0 left-0 bg-white px-5 py-3 rounded-br-[1.5rem] z-10">
+          <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+            Featured
           </span>
+          {/* Inverted curves */}
+          <svg className="absolute top-0 -right-[1.5rem] w-[1.5rem] h-[1.5rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+            <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+          </svg>
+          <svg className="absolute left-0 -bottom-[1.5rem] w-[1.5rem] h-[1.5rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+            <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+          </svg>
+        </div>
+
+        {/* Bottom-Right Cutout */}
+        <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-3 pb-3 rounded-tl-[1.5rem] z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1">
+          <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-900">
+            Explore <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </span>
+          {/* Inverted curves */}
+          <svg className="absolute bottom-0 -left-[1.5rem] w-[1.5rem] h-[1.5rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+            <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+          </svg>
+          <svg className="absolute -top-[1.5rem] right-0 w-[1.5rem] h-[1.5rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+            <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+          </svg>
         </div>
       </div>
 

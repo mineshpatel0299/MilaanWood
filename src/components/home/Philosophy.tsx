@@ -16,7 +16,7 @@ export default function Philosophy() {
 
         {/* Image — fade + slight x slide from left */}
         <div
-          className="md:w-1/2 relative h-[800px] w-full overflow-hidden rounded-sm transition-all duration-1000 ease-out"
+          className="md:w-1/2 relative h-[800px] w-full overflow-hidden rounded-t-[3rem] rounded-b-lg transition-all duration-1000 ease-out"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateX(0)' : 'translateX(-32px)',

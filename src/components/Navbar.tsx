@@ -16,7 +16,17 @@ export default function Navbar() {
 
   return (
     <div className="absolute top-0 left-0 z-50">
-      <nav className="flex items-center gap-10 bg-white/95 backdrop-blur-sm px-6 pr-10 py-3 rounded-br-[2rem] shadow-[0_4px_30px_rgba(0,0,0,0.08)]">
+      <nav className="relative flex items-center gap-10 bg-white px-6 pr-10 py-4 rounded-br-[2rem]">
+        {/* Inverted curve for top-right of navbar */}
+        <svg className="absolute top-0 -right-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+          <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+        </svg>
+
+        {/* Inverted curve for bottom-left of navbar */}
+        <svg className="absolute left-0 -bottom-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+          <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+        </svg>
+
         {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0 group" aria-label="Milan Wood Home">
           <Image

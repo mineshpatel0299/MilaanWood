@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
@@ -44,40 +44,22 @@ const categories = [
 ];
 
 export default function Categories() {
-  const [orderedCats, setOrderedCats] = useState(categories);
   const [expandedId, setExpandedId] = useState(categories[0].id);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [orderedCats, setOrderedCats] = useState(categories);
   const { ref: sectionRef, inView: sectionInView } = useInView(0.1);
 
   const activeCategory = categories.find(c => c.id === expandedId) || null;
 
   const handleCardClick = (id: number) => {
-    if (isAnimating || id === expandedId) return;
+    if (id === expandedId) return;
     
-    setIsAnimating(true);
-    
-    // Step 1: Shrink the current expanded card immediately
-    setExpandedId(-1);
-
-    // Step 2: Reorder items to slide the clicked one to the 1st position AFTER shrink finishes
-    setTimeout(() => {
-      setOrderedCats(prev => {
-        const idx = prev.findIndex(c => c.id === id);
-        // Rotate the array so the clicked item becomes the last element
-        const elementsToMove = prev.slice(0, idx + 1);
-        const remainingElements = prev.slice(idx + 1);
-        return [...remainingElements, ...elementsToMove];
-      });
-      
-      // Step 3: Expand the new card vertically STRICTLY AFTER it has finished sliding
-      setTimeout(() => {
-        setExpandedId(id);
-        
-        setTimeout(() => {
-          setIsAnimating(false);
-        }, 450); // Wait for expansion to finish before unlocking
-      }, 500); // 500ms delay to ensure the slide is 100% complete before expanding
-    }, 450); // 450ms delay to ensure shrink is fully complete
+    setExpandedId(id);
+    setOrderedCats(prev => {
+      const clickedItem = prev.find(c => c.id === id);
+      if (!clickedItem) return prev;
+      const otherItems = prev.filter(c => c.id !== id);
+      return [...otherItems, clickedItem];
+    });
   };
 
   return (
@@ -115,7 +97,7 @@ export default function Categories() {
                 layout
                 key={cat.id} 
                 transition={{ 
-                  layout: { duration: 0.4, ease: "easeInOut" }
+                  layout: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } 
                 }}
                 className={`relative cursor-pointer overflow-hidden rounded-sm ${
                   isExpanded 
@@ -141,23 +123,52 @@ export default function Categories() {
         </div>
 
         {/* Right Column: Text Details */}
-        <div className="flex flex-col justify-center w-full md:w-[40%] pl-0 md:pl-12 h-[300px]">
+        <div className="flex flex-col justify-center w-full md:w-[40%] pl-0 md:pl-20 h-[600px]">
           <AnimatePresence mode="wait">
             {activeCategory && (
               <motion.div 
                 key={activeCategory.id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="max-w-sm"
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+                className="max-w-md flex flex-col justify-center h-full"
               >
-                <h2 className="text-sm font-bold text-neutral-900 mb-1">{activeCategory.title}</h2>
-                <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em] mb-12">{activeCategory.subtitle}</p>
+                <div className="mb-12">
+                  <motion.h2 
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.8 }}
+                    className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-900 mb-2"
+                  >
+                    {activeCategory.title}
+                  </motion.h2>
+                  <motion.p 
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}
+                    className="text-[11px] italic font-serif text-neutral-500"
+                  >
+                    {activeCategory.subtitle}
+                  </motion.p>
+                </div>
                 
-                <p className="text-3xl font-medium leading-[1.4] text-neutral-900 tracking-tight">
-                  {activeCategory.description}
-                </p>
+                <div className="relative">
+                  <div className="absolute -left-8 top-2 bottom-2 w-px bg-neutral-200" />
+                  <motion.p 
+                    initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8 }}
+                    className="text-3xl md:text-[2.5rem] font-light leading-[1.3] text-neutral-800 tracking-tight mb-16"
+                  >
+                    {activeCategory.description}
+                  </motion.p>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}
+                >
+                  <button className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-500 transition-colors duration-300 group">
+                    Explore Collection
+                    <div className="w-8 h-px bg-neutral-900 group-hover:w-12 group-hover:bg-neutral-500 transition-all duration-500 ease-out relative">
+                      <span className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-px border-t border-r border-current w-1.5 h-1.5 rotate-45" />
+                    </div>
+                  </button>
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>

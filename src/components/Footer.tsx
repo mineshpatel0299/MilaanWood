@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef as React.RefObject<HTMLElement>}
-      className="bg-black text-white pt-32 pb-12 px-8 md:px-16 font-sans border-t border-white/10"
+      className="bg-[#111] text-white pt-24 pb-12 px-8 md:px-16 font-sans rounded-t-[3rem] mt-[-2rem] relative z-20"
     >
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between gap-24 mb-32">
 
@@ -79,7 +79,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
-        className="max-w-[1400px] mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600 transition-all duration-700 ease-out"
+        className="max-w-[1400px] mx-auto border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-500 transition-all duration-700 ease-out"
         style={{
           opacity: inView ? 1 : 0,
           transitionDelay: '300ms',
