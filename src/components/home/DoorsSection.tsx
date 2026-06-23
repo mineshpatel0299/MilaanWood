@@ -60,7 +60,9 @@ export default function DoorsSection() {
         >
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Our Signature Collection</h2>
           <p className="mt-4 text-neutral-500 max-w-lg text-center text-sm md:text-base">
-            Hover to open — explore our signature collection of CNC-engineered and fully customized door systems.
+            <span className="hidden lg:inline">Hover to open</span>
+            <span className="inline lg:hidden">Tap a door to open</span>
+            {" — explore our signature collection of CNC-engineered and fully customized door systems."}
           </p>
         </motion.div>
 
@@ -113,6 +115,21 @@ export default function DoorsSection() {
                       <ArrowRight size={36} strokeWidth={1.5} />
                     </motion.div>
                  </div>
+              </div>
+
+              {/* Tap Indicator (Mobile/Tablet Only) */}
+              <div 
+                className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-opacity duration-300 lg:hidden flex flex-col items-center gap-2 ${
+                  openDoorId === door.id ? 'opacity-0' : 'opacity-100'
+                }`}
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                </span>
+                <span className="text-[9px] font-bold tracking-[0.2em] text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  Tap to Open
+                </span>
               </div>
             </motion.div>
           ))}
