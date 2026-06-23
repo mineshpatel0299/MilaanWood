@@ -41,13 +41,13 @@ export default function Navbar() {
         </Link>
 
         {/* Nav Links */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setActiveLink(link.label)}
-              className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
+              className={`relative px-4 py-2 text-base md:text-lg font-semibold rounded-full transition-all duration-300 ${
                 activeLink === link.label
                   ? 'text-neutral-900'
                   : 'text-neutral-500 hover:text-neutral-800'

@@ -65,10 +65,10 @@ export default function Categories() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="bg-[#fafafa] text-black min-h-screen py-24 flex items-center justify-center font-sans overflow-hidden"
+      className="bg-[#fafafa] text-black min-h-screen py-16 md:py-24 flex items-center justify-center font-sans overflow-hidden"
     >
       
-      <div className="w-full max-w-[1400px] px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+      <div className="w-full max-w-[1400px] px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-24">
         
         {/* Left Column: Number & Rotated Title */}
         <div
@@ -88,8 +88,18 @@ export default function Categories() {
           </div>
         </div>
 
+        {/* Mobile Title (visible only on small screens) */}
+        <div className="md:hidden flex items-center justify-between w-full px-4 mb-4">
+           <div className="text-[11px] font-bold tracking-[0.2em] text-neutral-900">
+            {activeCategory ? `0${categories.findIndex(c => c.id === expandedId) + 1} / 0${categories.length}` : ''}
+          </div>
+          <div className="text-xs font-semibold tracking-[0.4em] uppercase text-neutral-900">
+            Categories
+          </div>
+        </div>
+
         {/* Middle Column: Accordion Images */}
-        <div className="flex flex-row items-end justify-start md:justify-center gap-4 w-full md:w-[50%] h-[600px]">
+        <div className="flex flex-row items-end justify-center md:justify-center gap-2 md:gap-4 w-full md:w-[50%] h-[350px] md:h-[600px]">
           {orderedCats.map((cat) => {
             const isExpanded = cat.id === expandedId;
             return (
@@ -97,17 +107,13 @@ export default function Categories() {
                 layout
                 key={cat.id} 
                 transition={{ 
-                  layout: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } 
+                  layout: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
                 }}
-                className={`relative cursor-pointer overflow-hidden rounded-sm ${
+                className={`relative cursor-pointer overflow-hidden rounded-md md:rounded-sm origin-bottom ${
                   isExpanded 
-                    ? 'shadow-2xl z-10' 
-                    : 'opacity-75 hover:opacity-100 z-0'
+                    ? 'shadow-2xl z-10 w-full h-full' 
+                    : 'opacity-75 hover:opacity-100 z-0 w-[40px] h-[100px] md:w-[80px] md:h-[160px]'
                 }`}
-                style={{
-                  height: isExpanded ? '100%' : '160px',
-                  width: isExpanded ? '320px' : '80px',
-                }}
                 onClick={() => handleCardClick(cat.id)}
               >
                 <Image
@@ -123,7 +129,7 @@ export default function Categories() {
         </div>
 
         {/* Right Column: Text Details */}
-        <div className="flex flex-col justify-center w-full md:w-[40%] pl-0 md:pl-20 h-[600px]">
+        <div className="flex flex-col justify-center w-full md:w-[40%] px-4 md:pl-20 min-h-[300px] md:h-[600px] mt-8 md:mt-0">
           <AnimatePresence mode="wait">
             {activeCategory && (
               <motion.div 
@@ -134,26 +140,26 @@ export default function Categories() {
                 transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
                 className="max-w-md flex flex-col justify-center h-full"
               >
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                   <motion.h2 
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.8 }}
-                    className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-900 mb-2"
+                    className="text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-neutral-900 mb-2"
                   >
                     {activeCategory.title}
                   </motion.h2>
                   <motion.p 
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}
-                    className="text-[11px] italic font-serif text-neutral-500"
+                    className="text-[11px] md:text-xs italic font-serif text-neutral-500"
                   >
                     {activeCategory.subtitle}
                   </motion.p>
                 </div>
                 
                 <div className="relative">
-                  <div className="absolute -left-8 top-2 bottom-2 w-px bg-neutral-200" />
+                  <div className="absolute -left-4 md:-left-8 top-2 bottom-2 w-px bg-neutral-200" />
                   <motion.p 
                     initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8 }}
-                    className="text-3xl md:text-[2.5rem] font-light leading-[1.3] text-neutral-800 tracking-tight mb-16"
+                    className="text-2xl md:text-[2.5rem] font-light leading-[1.3] text-neutral-800 tracking-tight mb-10 md:mb-16"
                   >
                     {activeCategory.description}
                   </motion.p>
@@ -162,9 +168,9 @@ export default function Categories() {
                 <motion.div
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  <button className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-500 transition-colors duration-300 group">
+                  <button className="flex items-center gap-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-500 transition-colors duration-300 group">
                     Explore Collection
-                    <div className="w-8 h-px bg-neutral-900 group-hover:w-12 group-hover:bg-neutral-500 transition-all duration-500 ease-out relative">
+                    <div className="w-8 md:w-12 h-px bg-neutral-900 group-hover:w-12 md:group-hover:w-16 group-hover:bg-neutral-500 transition-all duration-500 ease-out relative">
                       <span className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-px border-t border-r border-current w-1.5 h-1.5 rotate-45" />
                     </div>
                   </button>

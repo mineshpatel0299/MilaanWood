@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
-import { useInView } from '@/hooks/useInView';
+import { motion } from 'framer-motion';
 
 const products = [
   { id: 1, name: 'Kuro Dining Chair', price: '$450', image: '/product_1.png' },
@@ -10,21 +10,34 @@ const products = [
   { id: 3, name: 'Yugen Stool', price: '$280', image: '/product_3.png' },
 ];
 
-function ProductCard({ product, delay }: { product: typeof products[0]; delay: number }) {
-  const { ref, inView } = useInView(0.1);
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
+  }
+};
+
+function ProductCard({ product }: { product: typeof products[0] }) {
   return (
-    <div
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className="group cursor-pointer transition-all duration-700 ease-out"
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(36px)',
-        transitionDelay: `${delay}ms`,
-      }}
+    <motion.div
+      variants={itemVariants}
+      className="group cursor-pointer"
     >
       {/* Image container */}
-      <div className="relative h-[550px] w-full mb-6 overflow-hidden bg-[#f7f7f7] rounded-[2rem]">
+      <div className="relative h-[400px] md:h-[550px] w-full mb-6 overflow-hidden bg-[#f7f7f7] rounded-[1.5rem] md:rounded-[2rem]">
         <Image
           src={product.image}
           alt={product.name}
@@ -35,7 +48,7 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none" />
 
         {/* Top-Left Cutout */}
-        <div className="absolute top-0 left-0 bg-white px-5 py-3 rounded-br-[1.5rem] z-10">
+        <div className="absolute top-0 left-0 bg-white px-4 py-2 md:px-5 md:py-3 rounded-br-[1.5rem] z-10">
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500">
             Featured
           </span>
@@ -49,7 +62,7 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
         </div>
 
         {/* Bottom-Right Cutout */}
-        <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-3 pb-3 rounded-tl-[1.5rem] z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1">
+        <div className="absolute bottom-0 right-0 bg-white pl-4 pt-3 pr-3 pb-3 md:pl-5 md:pt-4 md:pr-3 md:pb-3 rounded-tl-[1.5rem] z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1">
           <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-900">
             Explore <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </span>
@@ -65,10 +78,10 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
 
       {/* Info */}
       <div className="flex justify-between items-center px-2">
-        <h3 className="text-lg font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors duration-300">
+        <h3 className="text-base md:text-lg font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors duration-300">
           {product.name}
         </h3>
-        <span className="text-neutral-500 tracking-wide group-hover:text-neutral-800 transition-colors duration-300">
+        <span className="text-sm md:text-base text-neutral-500 tracking-wide group-hover:text-neutral-800 transition-colors duration-300">
           {product.price}
         </span>
       </div>
@@ -77,42 +90,45 @@ function ProductCard({ product, delay }: { product: typeof products[0]; delay: n
       <div className="mt-3 px-2">
         <div className="h-px bg-neutral-200 w-0 group-hover:w-full transition-all duration-500 ease-out" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function FeaturedProducts() {
-  const { ref: headerRef, inView: headerInView } = useInView(0.2);
-
   return (
-    <section className="bg-white text-black py-40 px-8 md:px-16 font-sans">
+    <section className="bg-white text-black py-20 md:py-40 px-4 md:px-16 font-sans">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Header */}
-        <div
-          ref={headerRef as React.RefObject<HTMLDivElement>}
-          className="flex justify-between items-end mb-20 border-b border-neutral-200 pb-8 transition-all duration-700 ease-out"
-          style={{
-            opacity: headerInView ? 1 : 0,
-            transform: headerInView ? 'translateY(0)' : 'translateY(20px)',
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0 mb-12 md:mb-20 border-b border-neutral-200 pb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight">Curated Pieces</h2>
-          <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] hover:text-neutral-500 transition-colors duration-300 group">
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Curated Pieces</h2>
+          <button className="flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:text-neutral-500 transition-colors duration-300 group">
             View Collection
             <ArrowUpRight
-              size={16}
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+              size={14}
+              className="md:w-4 md:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
             />
           </button>
-        </div>
+        </motion.div>
 
         {/* Products grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {products.map((product, i) => (
-            <ProductCard key={product.id} product={product} delay={i * 120} />
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-12"
+        >
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
