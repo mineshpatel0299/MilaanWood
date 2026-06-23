@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -45,6 +46,8 @@ const itemVariants = {
 };
 
 export default function DoorsSection() {
+  const [openDoorId, setOpenDoorId] = useState<number | null>(null);
+
   return (
     <section className="bg-white text-black py-20 md:py-32 px-4 md:px-8 lg:px-16 font-sans">
       <div className="max-w-[1600px] mx-auto">
@@ -73,18 +76,23 @@ export default function DoorsSection() {
               key={door.id} 
               variants={itemVariants} 
               className="relative group cursor-pointer w-full aspect-[0.45/1] overflow-hidden bg-neutral-100 hover:shadow-2xl hover:z-10 transition-shadow duration-[1200ms]"
+              onClick={() => {
+                if (window.innerWidth < 1024) {
+                  setOpenDoorId(prev => prev === door.id ? null : door.id);
+                }
+              }}
             >
               {/* Open Door Image (Background) */}
               <Image
                 src={door.imageOpen}
                 alt={`${door.title} Open`}
                 fill
-                className="object-cover transition-transform duration-300 ease-out scale-[1.05] group-hover:scale-100 z-0"
+                className={`object-cover transition-transform duration-300 ease-out z-0 ${openDoorId === door.id ? 'scale-100' : 'scale-[1.05] lg:group-hover:scale-100'}`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               />
 
               {/* Closed Door Image (Foreground, fades out) */}
-              <div className="absolute inset-0 z-10 transition-opacity duration-300 ease-out group-hover:opacity-0 pointer-events-none">
+              <div className={`absolute inset-0 z-10 transition-opacity duration-300 ease-out pointer-events-none ${openDoorId === door.id ? 'opacity-0' : 'opacity-100 lg:group-hover:opacity-0'}`}>
                 <Image
                   src={door.imageClosed}
                   alt={`${door.title} Closed`}
@@ -96,7 +104,7 @@ export default function DoorsSection() {
 
               {/* Arrow Icon */}
               <div className="absolute inset-y-0 right-12 md:right-[15%] flex flex-col justify-center pointer-events-none z-20">
-                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out translate-y-12 md:translate-y-16">
+                 <div className={`transition-opacity duration-300 ease-out translate-y-12 md:translate-y-16 ${openDoorId === door.id ? 'opacity-100' : 'opacity-0 lg:group-hover:opacity-100'}`}>
                     <motion.div
                        animate={{ x: [0, 10, 0] }}
                        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
