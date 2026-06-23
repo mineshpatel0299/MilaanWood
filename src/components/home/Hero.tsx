@@ -1,55 +1,25 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Navbar from '../Navbar';
 
-const CAROUSEL_IMAGES = [
-  "/hero-bg.png",
-  "/hero-bg-2.png",
-  "/hero-bg-3.png"
-];
-
 export default function Hero() {
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIdx((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
-    }, 6000); // slightly slower to enjoy the animation
-    return () => clearInterval(timer);
-  }, []);
-
-  const goToNext = () => setCurrentIdx((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
-  const goToPrev = () => setCurrentIdx((prev) => (prev - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length);
-  const goToSlide = (idx: number) => setCurrentIdx(idx);
 
   return (
     <div className="bg-white p-2 md:p-5 w-full min-h-screen">
       <div className="relative h-[calc(100vh-1rem)] md:h-[calc(100vh-2.5rem)] w-full overflow-hidden bg-neutral-900 font-sans rounded-[1.5rem] md:rounded-[2rem]">
 
-        {/* Background Images with AnimatePresence */}
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={currentIdx}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={CAROUSEL_IMAGES[currentIdx]}
-              alt={`Modern wooden interior ${currentIdx + 1}`}
-              fill
-              className="object-cover object-center"
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/* Background Video */}
+        <video
+          src="/door.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
 
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 md:bg-gradient-to-r md:from-black/80 md:via-black/30 md:to-transparent" />
@@ -64,7 +34,7 @@ export default function Hero() {
             visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
             hidden: {}
           }}
-          className="absolute inset-x-6 md:inset-y-0 md:left-0 bottom-12 md:bottom-auto flex flex-col justify-end md:justify-center md:px-16 z-10 text-white max-w-3xl md:ml-8 md:pt-24"
+          className="absolute inset-x-6 md:inset-y-0 md:left-0 bottom-8 md:bottom-auto flex flex-col justify-end md:justify-center md:px-16 z-10 text-white max-w-3xl md:ml-8 md:pt-40"
         >
 
           {/* Label */}
@@ -97,30 +67,8 @@ export default function Hero() {
               visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
             }}
             style={{ originX: 0 }}
-            className="h-px bg-white/30 mb-8 w-full md:w-[80%]"
+            className="h-px bg-white/30 mb-8 md:mb-12 w-full md:w-[80%]"
           />
-
-          {/* Stats */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-            className="flex flex-row items-start gap-8 md:gap-16 mb-10 md:mb-12"
-          >
-            <div>
-              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2">500+</div>
-              <p className="text-xs md:text-sm text-neutral-300 max-w-[140px] md:max-w-[220px] leading-relaxed">
-                Premium door systems delivered to residential & commercial projects.
-              </p>
-            </div>
-            <div>
-              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-neutral-300">CNC</div>
-              <p className="text-xs md:text-sm text-neutral-300 max-w-[140px] md:max-w-[220px] leading-relaxed">
-                CNC-engineered designs combining advanced manufacturing and skilled craft.
-              </p>
-            </div>
-          </motion.div>
 
           {/* CTA */}
           <motion.div
@@ -138,34 +86,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Navigation Arrows (Hidden on mobile for cleaner look) */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 z-10"
-        >
-          <button
-            onClick={goToPrev}
-            className="w-10 h-10 bg-black/20 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:bg-black/40 transition-all duration-300 hover:scale-110 cursor-pointer rounded-full"
-          >
-            <ChevronLeft size={20} />
-          </button>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 z-10"
-        >
-          <button
-            onClick={goToNext}
-            className="w-10 h-10 bg-black/20 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:bg-black/40 transition-all duration-300 hover:scale-110 cursor-pointer rounded-full"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </motion.div>
 
         {/* Bottom Right CTA */}
         <motion.div
@@ -193,24 +114,7 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Pagination dots */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2 md:gap-3"
-        >
-          {CAROUSEL_IMAGES.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              className={`rounded-full shadow-sm transition-all duration-500 cursor-pointer ${idx === currentIdx
-                  ? 'bg-white w-5 md:w-6 h-2 md:h-2.5'
-                  : 'bg-white/40 hover:bg-white/60 w-2 md:w-2.5 h-2 md:h-2.5'
-                }`}
-            />
-          ))}
-        </motion.div>
+
       </div>
     </div>
   );
