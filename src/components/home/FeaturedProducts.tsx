@@ -5,9 +5,9 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const products = [
-  { id: 1, name: 'Kuro Dining Chair', price: '$450', image: '/product_1.png' },
-  { id: 2, name: 'Sabi Coffee Table', price: '$1,200', image: '/product_2.png' },
-  { id: 3, name: 'Yugen Stool', price: '$280', image: '/product_3.png' },
+  { id: 1, name: 'Contemporary Door', image: '/contemporary_door.png' },
+  { id: 2, name: 'Modern Sun Door CNC Carved', image: '/sun_door_cnc.png' },
+  { id: 3, name: 'MW-CD-217', image: '/mw_cd_217.png' },
 ];
 
 const containerVariants = {
@@ -77,13 +77,10 @@ function ProductCard({ product }: { product: typeof products[0] }) {
       </div>
 
       {/* Info */}
-      <div className="flex justify-between items-center px-2">
+      <div className="px-2">
         <h3 className="text-base md:text-lg font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors duration-300">
           {product.name}
         </h3>
-        <span className="text-sm md:text-base text-neutral-500 tracking-wide group-hover:text-neutral-800 transition-colors duration-300">
-          {product.price}
-        </span>
       </div>
 
       {/* Bottom underline — expands on hover */}
@@ -107,7 +104,7 @@ export default function FeaturedProducts() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0 mb-12 md:mb-20 border-b border-neutral-200 pb-8"
         >
-          <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Curated Pieces</h2>
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Featured Projects</h2>
           <button className="flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:text-neutral-500 transition-colors duration-300 group">
             View Collection
             <ArrowUpRight

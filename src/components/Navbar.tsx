@@ -143,7 +143,7 @@ export default function Navbar() {
                 Milan Wood Studio
               </p>
               <p className="text-xs text-neutral-400">
-                Crafting perfection in imperfection.
+                Crafting Premium Spaces with Timeless Woodwork.
               </p>
             </motion.div>
           </motion.div>

@@ -68,7 +68,7 @@ export default function Stats() {
           }}
           className="text-sm md:text-xl tracking-[0.2em] md:tracking-[0.25em] uppercase font-medium text-neutral-900 mb-6 md:mb-8"
         >
-          The World's Leading Custom Woodworking Studio
+          Crafting Premium Spaces with Timeless Woodwork
         </motion.h2>
         
         <motion.p 
@@ -78,7 +78,7 @@ export default function Stats() {
           }}
           className="max-w-4xl text-neutral-500 leading-relaxed text-sm md:text-base mb-16 md:mb-32"
         >
-          Handling a portfolio of premium bespoke furniture, Milan Wood offers unparalleled artisanal craftsmanship and guidance in all key sectors including Custom Design, Raw Material Sourcing, Precision Handcrafting, and Global Delivery.
+          With a growing portfolio of projects across India, Milan Wood partners with architects, interior designers, and discerning clients to deliver solutions that are both functional and visually distinctive.
         </motion.p>
 
         {/* Stats Container - Desktop (Pyramid layout) */}
@@ -87,10 +87,10 @@ export default function Stats() {
           {/* Column 1 */}
           <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center justify-end h-full pb-4">
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-              <AnimatedCounter inView={hasInView} end={50} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={500} suffix="+" />
             </h4>
             <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-              Master Woodworkers
+              Door Systems Delivered
             </p>
           </motion.div>
 
@@ -99,10 +99,10 @@ export default function Stats() {
           {/* Column 2 */}
           <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center justify-center h-full">
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-              <AnimatedCounter inView={hasInView} end={240} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={15} suffix="+" />
             </h4>
             <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-              Bespoke Projects Delivered
+              Years of Excellence
             </p>
           </motion.div>
 
@@ -112,18 +112,18 @@ export default function Stats() {
           <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center justify-between h-full">
             <div className="flex flex-col items-center">
               <h4 className="text-5xl font-light text-neutral-900 mb-4 tracking-tight">
-                <AnimatedCounter inView={hasInView} end={75} suffix="+" />
+                <AnimatedCounter inView={hasInView} end={100} suffix="+" />
               </h4>
               <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-                Years Combined Experience
+                Unique Door Designs
               </p>
             </div>
             <div className="flex flex-col items-center pb-4">
               <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-                <AnimatedCounter inView={hasInView} end={12} prefix="$" suffix="M+" />
+                <AnimatedCounter inView={hasInView} end={25} suffix="+" />
               </h4>
               <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-                Portfolio of Crafted Pieces
+                Cities Served Across India
               </p>
             </div>
           </motion.div>
@@ -133,10 +133,10 @@ export default function Stats() {
           {/* Column 4 */}
           <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center justify-center h-full">
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-              <AnimatedCounter inView={hasInView} end={21} />
+              <AnimatedCounter inView={hasInView} end={50} suffix="+" />
             </h4>
             <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-              Global Design Awards
+              Partner Architects
             </p>
           </motion.div>
 
@@ -145,10 +145,10 @@ export default function Stats() {
           {/* Column 5 */}
           <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center justify-end h-full pb-4">
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-              <AnimatedCounter inView={hasInView} end={6500} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={30} suffix="+" />
             </h4>
             <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
-              Hours of Crafting per Year
+              Premium Wood Species
             </p>
           </motion.div>
 
@@ -158,44 +158,44 @@ export default function Stats() {
         <motion.div variants={containerVariants} className="grid md:hidden grid-cols-2 gap-y-12 gap-x-2 w-full">
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={50} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={500} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Master Woodworkers</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Door Systems Delivered</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={240} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={15} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Bespoke Projects</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Years of Excellence</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={75} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={100} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Years Experience</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Unique Door Designs</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={12} prefix="$" suffix="M+" />
+              <AnimatedCounter inView={hasInView} end={25} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Portfolio Value</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Cities Served</p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={21} />
+              <AnimatedCounter inView={hasInView} end={50} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Global Awards</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Partner Architects</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
-              <AnimatedCounter inView={hasInView} end={6500} suffix="+" />
+              <AnimatedCounter inView={hasInView} end={30} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Hours of Crafting</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Premium Wood Species</p>
           </motion.div>
         </motion.div>
 

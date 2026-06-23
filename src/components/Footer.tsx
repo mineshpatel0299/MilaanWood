@@ -33,7 +33,7 @@ export default function Footer() {
             />
           </div>
           <p className="text-neutral-400 leading-relaxed max-w-xs text-xs md:text-sm">
-            Crafting raw, wabi-sabi inspired wooden furniture for the modern, mindful home. Perfection in imperfection.
+            A trusted name in premium wooden doors and interior solutions, delivering exceptional craftsmanship across residential and commercial projects.
           </p>
         </div>
 
@@ -50,13 +50,13 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 md:flex md:gap-16 w-full md:w-auto">
             <div className="flex flex-col gap-4">
               <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Shop</h4>
-              {['Dining Tables', 'Lounge Seating', 'Storage & Cabinets', 'Bed Frames'].map((item) => (
+              {['Pivot Doors', 'Sliding Doors', 'French Doors', 'CNC Carved Doors'].map((item) => (
                 <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block">{item}</a>
               ))}
             </div>
             <div className="flex flex-col gap-4">
               <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Company</h4>
-              {['Our Philosophy', 'Sustainability', 'Journal', 'Contact'].map((item) => (
+              {['Our Story', 'Design Process', 'Gallery', 'Contact Us'].map((item) => (
                 <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block">{item}</a>
               ))}
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 max-w-xs">
             <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Newsletter</h4>
             <p className="text-neutral-400 mb-2 md:mb-4 text-xs md:text-sm leading-relaxed">
-              Join our mailing list for updates on new collections and exclusive pieces.
+              Stay updated with our latest projects, design intelligence, and premium door systems.
             </p>
             <div className="flex border-b border-neutral-700 pb-3 mt-2 group focus-within:border-white/60 transition-colors duration-300">
               <input

@@ -75,7 +75,7 @@ export default function Hero() {
             }}
             className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-neutral-400 mb-4 md:mb-6"
           >
-            Handcrafted wooden furniture
+            Crafting Premium Spaces with Timeless Woodwork
           </motion.p>
 
           {/* Heading */}
@@ -86,8 +86,8 @@ export default function Hero() {
             }}
             className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
-            Raw Wood.<br />
-            <span className="font-light text-neutral-100">Human Touch.</span>
+            Precision Crafted.<br />
+            <span className="font-light text-neutral-100">Timeless Woodwork.</span>
           </motion.h1>
 
           {/* Divider */}
@@ -109,15 +109,15 @@ export default function Hero() {
             className="flex flex-row items-start gap-8 md:gap-16 mb-10 md:mb-12"
           >
             <div>
-              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2">133.</div>
+              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2">500+</div>
               <p className="text-xs md:text-sm text-neutral-300 max-w-[140px] md:max-w-[220px] leading-relaxed">
-                Hours to craft a single Wood. From raw wood to final polish.
+                Premium door systems delivered to residential & commercial projects.
               </p>
             </div>
             <div>
-              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-neutral-300">53</div>
+              <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-neutral-300">CNC</div>
               <p className="text-xs md:text-sm text-neutral-300 max-w-[140px] md:max-w-[220px] leading-relaxed">
-                Unique handmade Wood designs in our collection.
+                CNC-engineered designs combining advanced manufacturing and skilled craft.
               </p>
             </div>
           </motion.div>
@@ -130,7 +130,7 @@ export default function Hero() {
             }}
           >
             <button className="flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-6 py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
-              Explore
+              Explore Doors
               <div className="bg-white text-neutral-900 rounded-full p-1.5 group-hover:translate-x-1 transition-transform duration-300">
                 <ArrowRight size={14} strokeWidth={3} />
               </div>
@@ -188,7 +188,7 @@ export default function Hero() {
             href="#"
             className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide group relative z-10"
           >
-            Explore Woods
+            Explore Collection
             <ArrowUpRight size={16} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Link>
         </motion.div>

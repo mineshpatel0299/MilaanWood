@@ -25,7 +25,7 @@ export default function CTA() {
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             className="text-3xl md:text-[3.5rem] font-light leading-[1.1] tracking-tight mb-6"
           >
-            Ready to bring <span className="italic font-serif text-neutral-400">nature</span> home?
+            Elevate your space with <span className="italic font-serif text-neutral-400">timeless woodwork.</span>
           </motion.h2>
           
           <motion.p 
@@ -35,7 +35,7 @@ export default function CTA() {
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
             className="text-base md:text-lg text-neutral-400 leading-relaxed mb-10 max-w-xl mx-auto"
           >
-            Book a consultation with our design team to discuss custom dimensions, finishes, or to commission a completely bespoke piece.
+            Partner with Milan Wood to deliver functional and visually distinctive door systems. Every door we create is a statement of detail, durability, and refined aesthetics.
           </motion.p>
           
           <motion.div
@@ -45,7 +45,7 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
             <button className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-neutral-200 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.1)] group">
-              Start a Project
+              Partner With Us
               <div className="bg-black text-white rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300">
                 <ArrowRight size={16} strokeWidth={2.5} />
               </div>

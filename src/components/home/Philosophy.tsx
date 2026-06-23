@@ -30,8 +30,8 @@ export default function Philosophy() {
         >
           <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
             <Image
-              src="/philosophy_main.png"
-              alt="Woodworker hands"
+              src="/sun_door_cnc.png"
+              alt="Premium woodwork details"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
             />
@@ -68,8 +68,8 @@ export default function Philosophy() {
             }}
             className="text-4xl md:text-7xl font-light leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
-            Perfection in <br />
-            <span className="italic font-serif text-neutral-400">imperfection.</span>
+            Precision meets
+            <br className="md:hidden" /> <span className="italic font-serif text-neutral-400">design intelligence.</span>
           </motion.h2>
 
           <motion.p
@@ -79,7 +79,7 @@ export default function Philosophy() {
             }}
             className="text-base md:text-lg text-neutral-300 leading-relaxed max-w-lg mb-10 md:mb-12"
           >
-            We embrace the wabi-sabi philosophy, finding true beauty in the natural flaws, cracks, and unique grain patterns of raw wood. Each piece is not just furniture, but a living testament to time, nature, and human touch.
+            Our work is defined by precision, design intelligence, and an uncompromising commitment to quality. Every door we create is more than a product—it is a statement of detail, durability, and refined aesthetics.
           </motion.p>
 
           <motion.button
@@ -89,7 +89,7 @@ export default function Philosophy() {
             }}
             className="self-start border-b border-white/30 pb-2 hover:text-neutral-400 hover:border-neutral-400 transition-all duration-300 uppercase tracking-[0.2em] text-[10px] md:text-xs font-semibold hover:pb-3"
           >
-            Read our story
+            Discover Our Process
           </motion.button>
         </motion.div>
       </div>

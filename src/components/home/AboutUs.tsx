@@ -46,7 +46,7 @@ export default function AboutUs() {
               }}
               className="text-4xl md:text-6xl font-light leading-[1.15] text-neutral-900 tracking-tight"
             >
-              Rooted in <span className="italic font-serif text-neutral-400">tradition.</span>
+              Precision & <br className="md:hidden" /><span className="italic font-serif text-neutral-400">design intelligence.</span>
             </motion.h3>
           </div>
           
@@ -68,7 +68,7 @@ export default function AboutUs() {
               }}
               className="text-base md:text-lg text-neutral-600 leading-relaxed mb-6 md:mb-8"
             >
-              Founded by a collective of passionate artisans, Milan Wood is a dedication to the slow craft of furniture making. We source our timber responsibly, letting the natural imperfections dictate the final form of every piece.
+              Milan Wood is a trusted name in the world of premium wooden doors and interior solutions, delivering exceptional craftsmanship across residential and commercial projects. Our work is defined by precision, design intelligence, and an uncompromising commitment to quality.
             </motion.p>
             
             <motion.p 
@@ -78,7 +78,7 @@ export default function AboutUs() {
               }}
               className="text-base md:text-lg text-neutral-600 leading-relaxed mb-10 md:mb-12"
             >
-              Our workshop in the quiet hills is where raw, untamed nature meets precise human engineering—resulting in functional art designed to outlast generations.
+              From CNC-engineered designs to fully customized door systems, we bring together advanced manufacturing and skilled craftsmanship to elevate modern spaces. Our approach is rooted in consistency, attention to detail, and a deep understanding of material and design.
             </motion.p>
           </div>
         </motion.div>
@@ -93,7 +93,7 @@ export default function AboutUs() {
         >
           <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
             <Image
-              src="/hero-bg-2.png" // Reusing a beautiful image
+              src="/door_our_story.png"
               alt="Artisan workshop"
               fill
               className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]"
@@ -117,7 +117,7 @@ export default function AboutUs() {
           {/* Bottom-Right Cutout (Action) */}
           <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 rounded-tl-[1.5rem] md:rounded-tl-[2rem] z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
             <span className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
-              Meet the Makers <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              Meet Our Team <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </span>
             {/* Inverted curves */}
             <svg className="absolute bottom-0 -left-[1.5rem] md:-left-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">

@@ -8,38 +8,38 @@ import { useInView } from '@/hooks/useInView';
 const categories = [
   {
     id: 1,
-    title: 'Dining Tables',
-    subtitle: 'Heart of the home',
-    description: '"Gather around pieces that tell a story. Handcrafted solid wood tables built for generations of memories."',
-    image: '/cat_table.png'
+    title: 'Luxury Pivot Doors',
+    subtitle: 'Grand entrances',
+    description: '"Sleek, contemporary premium pivot door systems designed to elevate grand entrances with refined aesthetics."',
+    image: '/door_categories.png'
   },
   {
     id: 2,
-    title: 'Lounge Chairs',
-    subtitle: 'Relaxation redefined',
-    description: '"Ergonomically designed for comfort without compromising our signature minimalist wabi-sabi aesthetic."',
-    image: '/cat_chair.png'
+    title: 'Contemporary Doors',
+    subtitle: 'Modern elegance',
+    description: '"A stunning statement of detail and durability, combining advanced manufacturing with skilled craftsmanship."',
+    image: '/door_cat_2.png'
   },
   {
     id: 3,
-    title: 'Bed Frames',
-    subtitle: 'Serene slumber',
-    description: '"Transform your bedroom into a tranquil sanctuary with our low-profile, sturdy raw wood bed frames."',
-    image: '/cat_bed.png'
+    title: 'Sliding Doors',
+    subtitle: 'Fluid spaces',
+    description: '"Fluid and functional sliding solutions that segment premium spaces while maintaining visual distinctiveness."',
+    image: '/door_cat_3.png'
   },
   {
     id: 4,
-    title: 'Coffee Tables',
-    subtitle: 'Center of attention',
-    description: '"Unique raw edge designs that bring the raw beauty of nature directly into your living room."',
-    image: '/cat_coffee.png'
+    title: 'French Doors',
+    subtitle: 'Garden gateways',
+    description: '"Elegant wooden door systems that bridge spaces beautifully, delivering precision and design intelligence."',
+    image: '/door_cat_4.png'
   },
   {
     id: 5,
-    title: 'Cabinets',
-    subtitle: 'Elegant storage',
-    description: '"Conceal your clutter with beautiful wooden storage solutions that double as striking accent pieces."',
-    image: '/cat_cabinet.png'
+    title: 'Heritage Doors',
+    subtitle: 'Timeless craft',
+    description: '"Custom-built door systems featuring timeless woodwork and craftsmanship rooted in a deep understanding of materials."',
+    image: '/door_cat_5.png'
   }
 ];
 

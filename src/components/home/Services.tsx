@@ -8,21 +8,21 @@ import { useInView } from '@/hooks/useInView';
 const SERVICES = [
   {
     id: 0,
-    title: 'CUSTOM DESIGN',
+    title: 'CUSTOMIZED SYSTEMS',
     button: 'DESIGN WITH US',
-    image: '/hero-bg.png'
+    image: '/door_categories.png'
   },
   {
     id: 1,
-    title: 'RAW MATERIALS',
-    button: 'VIEW WOOD TYPES',
-    image: '/philosophy_main.png'
+    title: 'CNC-ENGINEERED DESIGNS',
+    button: 'VIEW DESIGNS',
+    image: '/sun_door_cnc.png'
   },
   {
     id: 2,
-    title: 'READY TO SHIP',
+    title: 'TIMELESS WOODWORK',
     button: 'SHOP COLLECTION',
-    image: '/product_1.png'
+    image: '/door_cat_4.png'
   }
 ];
 
@@ -39,7 +39,7 @@ export default function Services() {
         style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}
       >
         <h2 className="text-center text-lg md:text-2xl font-medium tracking-[0.2em] uppercase text-neutral-900 mb-10 md:mb-16">
-          The Best Investment You'll Ever Make
+          Crafting Premium Spaces
         </h2>
 
         {/* Full width container with rounded corners */}

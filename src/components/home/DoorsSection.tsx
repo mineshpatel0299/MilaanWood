@@ -58,9 +58,9 @@ export default function DoorsSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-12 md:mb-16 flex flex-col items-center"
         >
-          <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Our Doors Collection</h2>
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Our Signature Collection</h2>
           <p className="mt-4 text-neutral-500 max-w-lg text-center text-sm md:text-base">
-            Discover our premium range of meticulously crafted doors.
+            Hover to open — explore our signature collection of CNC-engineered and fully customized door systems.
           </p>
         </motion.div>
 
