@@ -53,7 +53,7 @@ export default function Stats() {
   const [hasInView, setHasInView] = useState(false);
 
   return (
-    <section className="bg-[#f9f9f9] py-16 md:py-32 px-4 md:px-8 font-sans border-y border-neutral-200/50 overflow-hidden">
+    <section className="bg-[#f9f9f9] py-20 md:py-32 px-4 md:px-8 font-sans border-y border-neutral-200/50 overflow-hidden">
       <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -154,41 +154,48 @@ export default function Stats() {
 
         </motion.div>
 
-        {/* Stats Container - Mobile (Stacked) */}
-        <motion.div variants={containerVariants} className="flex md:hidden flex-col gap-12 w-full">
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h4 className="text-4xl font-light text-neutral-900 mb-2">
+        {/* Stats Container - Mobile (Grid) */}
+        <motion.div variants={containerVariants} className="grid md:hidden grid-cols-2 gap-y-12 gap-x-2 w-full">
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={50} suffix="+" />
             </h4>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Master Woodworkers</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Master Woodworkers</p>
           </motion.div>
-          <motion.div variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }} className="w-12 h-px bg-neutral-300 mx-auto" />
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h4 className="text-4xl font-light text-neutral-900 mb-2">
+          
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={240} suffix="+" />
             </h4>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Bespoke Projects</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Bespoke Projects</p>
           </motion.div>
-          <motion.div variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }} className="w-12 h-px bg-neutral-300 mx-auto" />
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h4 className="text-[2.75rem] font-light text-neutral-900 mb-2">
+          
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={75} suffix="+" />
             </h4>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Years Experience</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Years Experience</p>
           </motion.div>
-          <motion.div variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }} className="w-12 h-px bg-neutral-300 mx-auto" />
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h4 className="text-4xl font-light text-neutral-900 mb-2">
+          
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
+              <AnimatedCounter inView={hasInView} end={12} prefix="$" suffix="M+" />
+            </h4>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Portfolio Value</p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={21} />
             </h4>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Global Awards</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Global Awards</p>
           </motion.div>
-          <motion.div variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }} className="w-12 h-px bg-neutral-300 mx-auto" />
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h4 className="text-4xl font-light text-neutral-900 mb-2">
+          
+          <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={6500} suffix="+" />
             </h4>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Hours of Crafting</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Hours of Crafting</p>
           </motion.div>
         </motion.div>
 

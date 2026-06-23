@@ -43,7 +43,7 @@ export default function Services() {
         </h2>
 
         {/* Full width container with rounded corners */}
-        <div className="relative w-full max-w-[1536px] mx-auto h-[600px] md:h-[700px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
+        <div className="relative w-full max-w-[1536px] mx-auto h-[750px] md:h-[700px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
           
           {/* Background Images */}
           <AnimatePresence initial={false}>

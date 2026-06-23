@@ -15,7 +15,7 @@ export default function AboutUs() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <section ref={containerRef} className="bg-white text-black py-16 md:py-32 px-4 md:px-16 font-sans overflow-hidden">
+    <section ref={containerRef} className="bg-white text-black py-24 md:py-32 px-4 md:px-16 font-sans overflow-hidden">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
         
         {/* Left: Text Content */}

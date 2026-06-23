@@ -98,8 +98,8 @@ export default function Categories() {
           </div>
         </div>
 
-        {/* Middle Column: Accordion Images */}
-        <div className="flex flex-row items-end justify-center md:justify-center gap-2 md:gap-4 w-full md:w-[50%] h-[350px] md:h-[600px]">
+        {/* Middle Column: Accordion Images - Desktop Only */}
+        <div className="hidden md:flex flex-row items-end justify-center gap-4 w-[50%] h-[600px]">
           {orderedCats.map((cat) => {
             const isExpanded = cat.id === expandedId;
             return (
@@ -109,10 +109,10 @@ export default function Categories() {
                 transition={{ 
                   layout: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
                 }}
-                className={`relative cursor-pointer overflow-hidden rounded-md md:rounded-sm origin-bottom ${
+                className={`relative cursor-pointer overflow-hidden rounded-sm origin-bottom ${
                   isExpanded 
                     ? 'shadow-2xl z-10 w-full h-full' 
-                    : 'opacity-75 hover:opacity-100 z-0 w-[40px] h-[100px] md:w-[80px] md:h-[160px]'
+                    : 'opacity-75 hover:opacity-100 z-0 w-[80px] h-[160px]'
                 }`}
                 onClick={() => handleCardClick(cat.id)}
               >
@@ -123,6 +123,43 @@ export default function Categories() {
                   className="object-cover"
                 />
                 {!isExpanded && <div className="absolute inset-0 bg-black/5 transition-colors hover:bg-transparent" />}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Column: Vertical Accordion - Mobile Only */}
+        <div className="flex md:hidden flex-col gap-2 w-full h-[450px]">
+          {categories.map((cat) => {
+            const isExpanded = cat.id === expandedId;
+            return (
+              <motion.div 
+                layout
+                key={cat.id} 
+                transition={{ 
+                  layout: { duration: 0.8, ease: [0.25, 1, 0.5, 1] } 
+                }}
+                className={`relative cursor-pointer overflow-hidden rounded-xl ${
+                  isExpanded 
+                    ? 'shadow-2xl z-10 w-full flex-1' 
+                    : 'opacity-80 hover:opacity-100 z-0 w-full h-[60px]'
+                }`}
+                onClick={() => handleCardClick(cat.id)}
+              >
+                <Image
+                  src={cat.image}
+                  alt={cat.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className={`absolute inset-0 transition-colors duration-500 ${isExpanded ? 'bg-black/10' : 'bg-black/50'}`} />
+                
+                {/* Title overlay visible when collapsed */}
+                <div className={`absolute inset-0 flex items-center px-6 transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
+                  <span className="text-white font-bold uppercase tracking-[0.2em] text-[10px]">
+                    0{cat.id} &nbsp;&nbsp;&nbsp; {cat.title}
+                  </span>
+                </div>
               </motion.div>
             );
           })}

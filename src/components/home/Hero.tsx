@@ -84,7 +84,7 @@ export default function Hero() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 1, 0.5, 1] } }
             }}
-            className="text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
             Raw Wood.<br />
             <span className="font-light text-neutral-100">Human Touch.</span>
