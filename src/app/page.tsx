@@ -4,7 +4,7 @@ import Stats from "@/components/home/Stats";
 import AboutUs from "@/components/home/AboutUs";
 import DoorsSection from "@/components/home/DoorsSection";
 import Categories from "@/components/home/Categories";
-import FeaturedProducts from "@/components/home/FeaturedProducts";
+// import FeaturedProducts from "@/components/home/FeaturedProducts";
 import Services from "@/components/home/Services";
 import CTA from "@/components/home/CTA";
 import Footer from "@/components/Footer";
@@ -18,7 +18,7 @@ export default function Home() {
       <AboutUs />
       <DoorsSection />
       <Categories />
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
       <Services />
       <CTA />
       <Footer />
