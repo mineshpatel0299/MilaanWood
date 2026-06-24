@@ -5,27 +5,32 @@ import AboutUs from "@/components/home/AboutUs";
 import DoorsSection from "@/components/home/DoorsSection";
 import Categories from "@/components/home/Categories";
 // import FeaturedProducts from "@/components/home/FeaturedProducts";
+import FeaturedCollection from "@/components/home/FeaturedCollection";
 import Services from "@/components/home/Services";
 import ManufacturingProcess from "@/components/home/ManufacturingProcess";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import Footer from "@/components/Footer";
+import HomeWrapper from "@/components/home/HomeWrapper";
 
 export default function Home() {
   return (
-    <main id="main-content" className="min-h-screen">
-      <Hero />
-      <Philosophy />
-      <Services />
-      <Stats />
-      <AboutUs />
-      <ManufacturingProcess />
-      {/* <DoorsSection /> */}
-      {/* <Categories /> */}
-      {/* <FeaturedProducts /> */}
-      <FAQ />
-      <CTA />
-      <Footer />
-    </main>
+    <HomeWrapper>
+      <main id="main-content" className="min-h-screen">
+        <Hero />
+        <Philosophy />
+        <FeaturedCollection />
+        <Services />
+        <Stats />
+        <AboutUs />
+        <ManufacturingProcess />
+        {/* <DoorsSection /> */}
+        {/* <Categories /> */}
+        {/* <FeaturedProducts /> */}
+        <FAQ />
+        <CTA />
+        <Footer />
+      </main>
+    </HomeWrapper>
   );
 }

@@ -34,7 +34,7 @@ export default function Hero() {
             visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
             hidden: {}
           }}
-          className="absolute inset-x-6 md:inset-y-0 md:left-0 bottom-8 md:bottom-auto flex flex-col justify-end md:justify-center md:px-16 z-10 text-white max-w-3xl md:ml-8 md:pt-40"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 text-white px-6 md:px-16"
         >
 
           {/* Label */}
@@ -56,8 +56,8 @@ export default function Hero() {
             }}
             className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
-            Precision Crafted.<br />
-            <span className="font-light text-neutral-100">Timeless Woodwork.</span>
+            Crafted to Welcome.<br />
+            <span className="font-light text-neutral-100">Built to Last.</span>
           </motion.h1>
 
           {/* Divider */}
@@ -66,8 +66,8 @@ export default function Hero() {
               hidden: { scaleX: 0, opacity: 0 },
               visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
             }}
-            style={{ originX: 0 }}
-            className="h-px bg-white/30 mb-8 md:mb-12 w-full md:w-[80%]"
+            style={{ originX: 0.5 }}
+            className="h-px bg-white/30 mb-8 md:mb-12 w-[60%] md:w-[40%]"
           />
 
           {/* CTA */}

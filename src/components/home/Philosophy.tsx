@@ -24,7 +24,7 @@ export default function Philosophy() {
         whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 1.4, ease: [0.25, 1, 0.5, 1] }}
-        className="hidden md:block absolute top-12 left-0 w-[13%] h-[220px] overflow-hidden"
+        className="hidden md:block absolute top-12 left-0 w-[13%] h-[220px] overflow-hidden rounded-lg"
       >
         <motion.div style={{ y: leftImgY, scale: leftImgScale }} className="absolute inset-0">
           <Image
@@ -42,7 +42,7 @@ export default function Philosophy() {
         whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0%)" }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.4, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-        className="hidden md:block absolute bottom-28 right-0 w-[15%] h-[260px] overflow-hidden"
+        className="hidden md:block absolute bottom-28 right-0 w-[15%] h-[260px] overflow-hidden rounded-lg"
       >
         <motion.div style={{ y: rightImgY, scale: rightImgScale }} className="absolute inset-0">
           <Image
@@ -63,7 +63,7 @@ export default function Philosophy() {
           hidden: {},
           visible: { transition: { staggerChildren: 0.25, delayChildren: 0.15 } },
         }}
-        className="relative z-10 max-w-2xl mx-auto px-6 flex flex-col items-center text-center"
+        className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center"
       >
         {/* Label — letter-by-letter fade */}
         <motion.p
@@ -93,11 +93,8 @@ export default function Philosophy() {
           }}
           className="text-2xl sm:text-3xl md:text-[2.5rem] font-light leading-[1.25] tracking-tight mb-12 md:mb-16"
         >
-          Precision meets crafting{' '}
-          <span className="italic text-neutral-400">interiors</span> for
-          living &amp; business.
-          <br />
-          We bring dreams to reality.
+          Precision meets crafting <span className="italic text-neutral-400">interiors</span><br />
+          for living &amp; business. We bring dreams to reality.
         </motion.h2>
 
         {/* Divider — expand from center */}
@@ -125,7 +122,7 @@ export default function Philosophy() {
               transition: { duration: 1, ease: [0.25, 1, 0.5, 1] },
             },
           }}
-          className="text-sm md:text-base text-neutral-700 leading-[1.9] md:leading-[2.1] tracking-wide"
+          className="text-sm md:text-base text-neutral-700 leading-[1.9] md:leading-[2.1] tracking-wide max-w-2xl"
         >
           Our unique designs and architectural approach impresses our clients — after all, this is our craft. The uniqueness of every project is created from scratch, combining ideas and solutions that meet the highest standards. We believe that behind every great interior lies a story, a mood, and most importantly — the person.
         </motion.p>
