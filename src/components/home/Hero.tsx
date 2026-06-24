@@ -13,7 +13,7 @@ export default function Hero() {
 
         {/* Background Video */}
         <video
-          src="/door.mp4"
+          src="/kk.mp4"
           autoPlay
           loop
           muted
@@ -34,7 +34,7 @@ export default function Hero() {
             visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
             hidden: {}
           }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 text-white px-6 md:px-16"
+          className="absolute inset-0 flex flex-col items-center justify-end text-center z-10 text-white px-6 md:px-16 pb-2 md:pb-3"
         >
 
           {/* Label */}
@@ -56,8 +56,7 @@ export default function Hero() {
             }}
             className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
-            Crafted to Welcome.<br />
-            <span className="font-light text-neutral-100">Built to Last.</span>
+            Crafted to Welcome. <span className="font-light text-neutral-100">Built to Last.</span>
           </motion.h1>
 
           {/* Divider */}
@@ -70,23 +69,6 @@ export default function Hero() {
             className="h-px bg-white/30 mb-8 md:mb-12 w-[60%] md:w-[40%]"
           />
 
-          {/* CTA */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-6 py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 group cursor-pointer"
-            >
-              Explore Doors
-              <div className="bg-white text-neutral-900 rounded-full p-1.5 group-hover:translate-x-1 transition-transform duration-300">
-                <ArrowRight size={14} strokeWidth={3} />
-              </div>
-            </Link>
-          </motion.div>
         </motion.div>
 
 
