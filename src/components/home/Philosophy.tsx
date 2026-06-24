@@ -69,7 +69,7 @@ export default function Philosophy() {
             className="text-4xl md:text-7xl font-light leading-[1.1] mb-8 md:mb-12 tracking-tight"
           >
             Precision meets
-            <br className="md:hidden" /> <span className="italic font-serif text-neutral-400">design intelligence.</span>
+            <br className="md:hidden" /> <span className="italic text-neutral-400">design intelligence.</span>
           </motion.h2>
 
           <motion.p

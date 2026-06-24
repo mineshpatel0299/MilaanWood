@@ -16,8 +16,8 @@ export default function Home() {
       <Philosophy />
       <Stats />
       <AboutUs />
-      <DoorsSection />
-      <Categories />
+      {/* <DoorsSection /> */}
+      {/* <Categories /> */}
       {/* <FeaturedProducts /> */}
       <Services />
       <CTA />

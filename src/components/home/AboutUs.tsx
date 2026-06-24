@@ -46,7 +46,7 @@ export default function AboutUs() {
               }}
               className="text-4xl md:text-6xl font-light leading-[1.15] text-neutral-900 tracking-tight"
             >
-              Precision & <br className="md:hidden" /><span className="italic font-serif text-neutral-400">design intelligence.</span>
+              Precision & <br className="md:hidden" /><span className="italic text-neutral-400">design intelligence.</span>
             </motion.h3>
           </div>
           

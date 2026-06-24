@@ -186,7 +186,7 @@ export default function Categories() {
                   </motion.h2>
                   <motion.p 
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.8 }}
-                    className="text-[11px] md:text-xs italic font-serif text-neutral-500"
+                    className="text-[11px] md:text-xs italic text-neutral-500"
                   >
                     {activeCategory.subtitle}
                   </motion.p>

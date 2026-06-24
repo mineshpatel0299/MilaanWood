@@ -25,7 +25,7 @@ export default function CTA() {
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             className="text-3xl md:text-[3.5rem] font-light leading-[1.1] tracking-tight mb-6"
           >
-            Elevate your space with <span className="italic font-serif text-neutral-400">timeless woodwork.</span>
+            Elevate your space with <span className="italic text-neutral-400">timeless woodwork.</span>
           </motion.h2>
           
           <motion.p 
