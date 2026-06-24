@@ -14,23 +14,28 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ variant = "left" }: { variant?: "left" | "center" }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const activeLink = navLinks.find((l) => l.href === pathname)?.label ?? 'Home';
+  const isCenter = variant === "center";
 
   return (
-    <div className="absolute top-0 left-0 z-50">
-      <nav className="relative flex items-center gap-6 md:gap-10 bg-white px-6 pr-6 md:pr-10 py-4 rounded-br-[2rem]">
-        {/* Inverted curve for top-right of navbar */}
-        <svg className="absolute top-0 -right-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-          <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
-        </svg>
+    <div className={isCenter ? "absolute top-0 left-1/2 -translate-x-1/2 z-50" : "absolute top-0 left-0 z-50"}>
+      <nav className={`relative flex items-center gap-6 md:gap-10 bg-white px-6 md:px-10 py-4 ${isCenter ? "pt-6 rounded-b-[2rem]" : "pr-6 md:pr-10 rounded-br-[2rem]"}`}>
+        {!isCenter && (
+          <>
+            {/* Inverted curve for top-right of navbar */}
+            <svg className="absolute top-0 -right-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+            </svg>
 
-        {/* Inverted curve for bottom-left of navbar */}
-        <svg className="absolute left-0 -bottom-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-          <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
-        </svg>
+            {/* Inverted curve for bottom-left of navbar */}
+            <svg className="absolute left-0 -bottom-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+            </svg>
+          </>
+        )}
 
         {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0 group" aria-label="Milan Wood Home">

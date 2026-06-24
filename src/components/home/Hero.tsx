@@ -73,32 +73,6 @@ export default function Hero() {
 
 
 
-        {/* Bottom Right CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="hidden md:block absolute bottom-0 right-0 z-10 bg-white rounded-tl-[2rem] px-8 py-6"
-        >
-          {/* Inverted curve for bottom-left of CTA */}
-          <svg className="absolute bottom-0 -left-[2rem] w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
-          </svg>
-
-          {/* Inverted curve for top-right of CTA */}
-          <svg className="absolute -top-[2rem] right-0 w-[2rem] h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
-          </svg>
-
-          <Link
-            href="/products"
-            className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded group relative z-10"
-          >
-            Explore Collection
-            <ArrowUpRight size={16} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-          </Link>
-        </motion.div>
-
 
       </div>
     </div>
