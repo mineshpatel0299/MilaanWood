@@ -49,34 +49,46 @@ export default function Footer() {
           {/* Shop and Company Links Side-by-Side on Mobile */}
           <div className="grid grid-cols-2 gap-8 md:flex md:gap-16 w-full md:w-auto">
             <div className="flex flex-col gap-4">
-              <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Shop</h4>
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Shop</h4>
               {['Pivot Doors', 'Sliding Doors', 'French Doors', 'CNC Carved Doors'].map((item) => (
-                <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block">{item}</a>
+                <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">{item}</a>
               ))}
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Company</h4>
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Company</h4>
               {['Our Story', 'Design Process', 'Gallery', 'Contact Us'].map((item) => (
-                <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block">{item}</a>
+                <a key={item} href="#" className="text-xs md:text-sm text-white hover:text-neutral-300 transition-colors duration-300 hover:translate-x-1 inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">{item}</a>
               ))}
             </div>
           </div>
           
           <div className="flex flex-col gap-4 max-w-xs">
-            <h4 className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Newsletter</h4>
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-neutral-500 mb-2 md:mb-4">Newsletter</h4>
             <p className="text-neutral-400 mb-2 md:mb-4 text-xs md:text-sm leading-relaxed">
               Stay updated with our latest projects, design intelligence, and premium door systems.
             </p>
-            <div className="flex border-b border-neutral-700 pb-3 mt-2 group focus-within:border-white/60 transition-colors duration-300">
-              <input
-                type="email"
-                placeholder="Email address"
-                className="bg-transparent border-none outline-none w-full text-xs md:text-sm placeholder:text-neutral-600"
-              />
-              <button className="uppercase tracking-[0.2em] text-[10px] font-bold hover:text-neutral-400 transition-colors duration-300">
-                Subscribe
-              </button>
-            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              aria-label="Newsletter signup"
+            >
+              <label htmlFor="footer-email" className="sr-only">Email address</label>
+              <div className="flex border-b border-neutral-700 pb-3 mt-2 group focus-within:border-white/60 transition-colors duration-300">
+                <input
+                  id="footer-email"
+                  type="email"
+                  placeholder="Email address"
+                  autoComplete="email"
+                  required
+                  className="bg-transparent border-none outline-none w-full text-xs md:text-sm placeholder:text-neutral-600 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="uppercase tracking-[0.2em] text-[10px] font-bold hover:text-neutral-400 transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -91,8 +103,8 @@ export default function Footer() {
       >
         <p>&copy; {new Date().getFullYear()} Milan Wood. All rights reserved.</p>
         <div className="flex gap-8">
-          <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
+          <a href="#" className="hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">Privacy Policy</a>
+          <a href="#" className="hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">Terms of Service</a>
         </div>
       </div>
     </footer>

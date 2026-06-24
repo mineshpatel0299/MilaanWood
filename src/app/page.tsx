@@ -6,20 +6,24 @@ import DoorsSection from "@/components/home/DoorsSection";
 import Categories from "@/components/home/Categories";
 // import FeaturedProducts from "@/components/home/FeaturedProducts";
 import Services from "@/components/home/Services";
+import ManufacturingProcess from "@/components/home/ManufacturingProcess";
+import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Hero />
       <Philosophy />
+      <Services />
       <Stats />
       <AboutUs />
+      <ManufacturingProcess />
       {/* <DoorsSection /> */}
       {/* <Categories /> */}
       {/* <FeaturedProducts /> */}
-      <Services />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

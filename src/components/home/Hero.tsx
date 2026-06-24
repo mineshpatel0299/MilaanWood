@@ -77,12 +77,15 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
             }}
           >
-            <button className="flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-6 py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-6 py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 group cursor-pointer"
+            >
               Explore Doors
               <div className="bg-white text-neutral-900 rounded-full p-1.5 group-hover:translate-x-1 transition-transform duration-300">
                 <ArrowRight size={14} strokeWidth={3} />
               </div>
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -106,8 +109,8 @@ export default function Hero() {
           </svg>
 
           <Link
-            href="#"
-            className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide group relative z-10"
+            href="/products"
+            className="flex items-center gap-2 text-sm font-bold text-neutral-900 hover:text-neutral-600 transition-colors tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded group relative z-10"
           >
             Explore Collection
             <ArrowUpRight size={16} className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

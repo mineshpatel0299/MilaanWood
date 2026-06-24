@@ -38,7 +38,10 @@ export default function RootLayout({
       lang="en"
       className={`${glacial.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        {children}
+      </body>
     </html>
   );
 }

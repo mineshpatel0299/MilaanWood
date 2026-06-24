@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -44,12 +45,15 @@ export default function CTA() {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
-            <button className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-neutral-200 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.1)] group">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-neutral-200 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a1a] cursor-pointer group"
+            >
               Partner With Us
               <div className="bg-black text-white rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300">
                 <ArrowRight size={16} strokeWidth={2.5} />
               </div>
-            </button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>

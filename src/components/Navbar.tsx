@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,8 +15,9 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState('Home');
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeLink = navLinks.find((l) => l.href === pathname)?.label ?? 'Home';
 
   return (
     <div className="absolute top-0 left-0 z-50">
@@ -49,8 +51,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              onClick={() => setActiveLink(link.label)}
-              className={`relative px-4 py-2 text-base md:text-lg font-semibold rounded-full transition-all duration-300 ${
+              className={`relative px-4 py-2 text-base md:text-lg font-normal rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 ${
                 activeLink === link.label
                   ? 'text-neutral-900'
                   : 'text-neutral-500 hover:text-neutral-800'
@@ -65,8 +66,8 @@ export default function Navbar() {
         </div>
 
         {/* Hamburger Menu - Mobile */}
-        <button 
-          className="md:hidden flex items-center justify-center text-neutral-900 hover:text-neutral-600 transition-colors"
+        <button
+          className="md:hidden flex items-center justify-center text-neutral-900 hover:text-neutral-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded-md"
           onClick={() => setIsMenuOpen(true)}
           aria-label="Open mobile menu"
         >
@@ -95,9 +96,9 @@ export default function Navbar() {
                   priority
                   unoptimized
                 />
-               <button 
-                  onClick={() => setIsMenuOpen(false)} 
-                  className="p-2 text-neutral-900 bg-neutral-100 hover:bg-neutral-200 transition-colors rounded-full"
+               <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 text-neutral-900 bg-neutral-100 hover:bg-neutral-200 transition-colors rounded-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
                   aria-label="Close mobile menu"
                >
                  <X size={24} strokeWidth={2} />
@@ -115,13 +116,10 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => {
-                      setActiveLink(link.label);
-                      setTimeout(() => setIsMenuOpen(false), 300);
-                    }}
-                    className={`block text-4xl font-light tracking-tight transition-colors duration-300 ${
-                      activeLink === link.label 
-                        ? 'text-black font-medium' 
+                    onClick={() => setTimeout(() => setIsMenuOpen(false), 300)}
+                    className={`block text-4xl font-light tracking-tight transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded ${
+                      activeLink === link.label
+                        ? 'text-black font-medium'
                         : 'text-neutral-400 hover:text-neutral-800'
                     }`}
                   >

@@ -1,13 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 function AnimatedCounter({ end, duration = 2500, suffix = "", prefix = "", inView }: { end: number, duration?: number, suffix?: string, prefix?: string, inView: boolean }) {
   const [count, setCount] = useState(0);
+  const prefersReducedMotion = useRef(
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
     if (!inView) return;
+    if (prefersReducedMotion.current) {
+      setCount(end);
+      return;
+    }
 
     let startTime: number | null = null;
     let animationFrame: number;
@@ -16,7 +23,7 @@ function AnimatedCounter({ end, duration = 2500, suffix = "", prefix = "", inVie
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      
+
       const easeOutQuart = 1 - Math.pow(1 - percentage, 4);
       setCount(Math.floor(end * easeOutQuart));
 
@@ -30,7 +37,7 @@ function AnimatedCounter({ end, duration = 2500, suffix = "", prefix = "", inVie
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, inView]);
 
-  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+  return <span className="tabular-nums">{prefix}{count.toLocaleString()}{suffix}</span>;
 }
 
 const containerVariants = {
@@ -89,7 +96,7 @@ export default function Stats() {
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
               <AnimatedCounter inView={hasInView} end={500} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
               Door Systems Delivered
             </p>
           </motion.div>
@@ -101,7 +108,7 @@ export default function Stats() {
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
               <AnimatedCounter inView={hasInView} end={15} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
               Years of Excellence
             </p>
           </motion.div>
@@ -114,7 +121,7 @@ export default function Stats() {
               <h4 className="text-5xl font-light text-neutral-900 mb-4 tracking-tight">
                 <AnimatedCounter inView={hasInView} end={100} suffix="+" />
               </h4>
-              <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
                 Unique Door Designs
               </p>
             </div>
@@ -122,7 +129,7 @@ export default function Stats() {
               <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
                 <AnimatedCounter inView={hasInView} end={25} suffix="+" />
               </h4>
-              <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
                 Cities Served Across India
               </p>
             </div>
@@ -135,7 +142,7 @@ export default function Stats() {
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
               <AnimatedCounter inView={hasInView} end={50} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
               Partner Architects
             </p>
           </motion.div>
@@ -147,7 +154,7 @@ export default function Stats() {
             <h4 className="text-4xl font-light text-neutral-900 mb-4 tracking-tight">
               <AnimatedCounter inView={hasInView} end={30} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[120px] leading-relaxed">
               Premium Wood Species
             </p>
           </motion.div>
@@ -160,42 +167,42 @@ export default function Stats() {
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={500} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Door Systems Delivered</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Door Systems Delivered</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={15} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Years of Excellence</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Years of Excellence</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={100} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Unique Door Designs</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Unique Door Designs</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2.5rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={25} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Cities Served</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Cities Served</p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={50} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Partner Architects</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Partner Architects</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
             <h4 className="text-[2rem] font-light text-neutral-900 mb-2">
               <AnimatedCounter inView={hasInView} end={30} suffix="+" />
             </h4>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Premium Wood Species</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 max-w-[110px]">Premium Wood Species</p>
           </motion.div>
         </motion.div>
 

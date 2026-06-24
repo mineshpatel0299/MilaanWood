@@ -28,8 +28,13 @@ const SERVICES = [
 
 export default function Services() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [bgIdx, setBgIdx] = useState<number>(1); // Default background image
+  const [bgIdx, setBgIdx] = useState<number>(1);
   const { ref, inView } = useInView(0.2);
+
+  const handleActivate = (idx: number) => {
+    setHoveredIdx(idx);
+    setBgIdx(idx);
+  };
 
   return (
     <section className="bg-white py-16 md:py-24 pb-20 md:pb-32 px-4 md:px-8">
@@ -77,13 +82,15 @@ export default function Services() {
               return (
                 <motion.div
                   key={service.id}
-                  onMouseEnter={() => {
-                    setHoveredIdx(idx);
-                    setBgIdx(idx);
-                  }}
+                  onMouseEnter={() => handleActivate(idx)}
+                  onClick={() => handleActivate(idx)}
                   animate={{ flex: isHovered ? 2 : 1 }}
                   transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-                  className="relative flex flex-col justify-center md:justify-end p-6 md:p-12 border-b md:border-b-0 md:border-r border-white/30 last:border-b-0 md:last:border-r-0 cursor-pointer overflow-hidden group"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={service.title}
+                  onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleActivate(idx)}
+                  className="relative flex flex-col justify-center md:justify-end p-6 md:p-12 border-b md:border-b-0 md:border-r border-white/30 last:border-b-0 md:last:border-r-0 cursor-pointer overflow-hidden group focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
                 >
                   {/* Dark overlay for non-hovered columns ONLY when something is actively hovered */}
                   <div 
@@ -101,10 +108,10 @@ export default function Services() {
                     <h3 className="text-base md:text-xl tracking-[0.2em] uppercase font-bold mb-4 md:mb-8">
                       {service.title}
                     </h3>
-                    <button 
-                      className={`border px-6 md:px-8 py-2 md:py-3 text-[9px] md:text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
-                        isHovered 
-                          ? 'border-white bg-white text-black' 
+                    <button
+                      className={`border px-6 md:px-8 py-2 md:py-3 text-[11px] tracking-[0.2em] uppercase transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                        isHovered
+                          ? 'border-white bg-white text-black'
                           : 'border-white/50 text-white/80 md:hover:border-white md:hover:text-white'
                       }`}
                     >

@@ -1,18 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
 export default function AboutUs() {
+  const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["-15%", "15%"]);
 
   return (
     <section ref={containerRef} className="bg-white text-black py-24 md:py-32 px-4 md:px-16 font-sans overflow-hidden">
@@ -116,9 +118,9 @@ export default function AboutUs() {
 
           {/* Bottom-Right Cutout (Action) */}
           <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 rounded-tl-[1.5rem] md:rounded-tl-[2rem] z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
-            <span className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900">
+            <Link href="/about" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded">
               Meet Our Team <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-            </span>
+            </Link>
             {/* Inverted curves */}
             <svg className="absolute bottom-0 -left-[1.5rem] md:-left-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
               <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
