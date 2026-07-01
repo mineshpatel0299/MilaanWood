@@ -54,22 +54,31 @@ export default function Hero() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 1, 0.5, 1] } }
             }}
-            className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-8 md:mb-12 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-[5rem] font-medium leading-[1.1] mb-5 md:mb-7 tracking-tight"
           >
             Crafted to Welcome. <span className="font-light text-neutral-100">Built to Last.</span>
           </motion.h1>
 
-          {/* Divider */}
+          {/* Explore Collections Button */}
           <motion.div
             variants={{
-              hidden: { scaleX: 0, opacity: 0 },
-              visible: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: "easeOut" } }
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
             }}
-            style={{ originX: 0.5 }}
-            className="h-px bg-white/30 mb-8 md:mb-12 w-[60%] md:w-[40%]"
-          />
+            className="mb-8 md:mb-12"
+          >
+            <Link
+              href="/collections"
+              className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1)] group"
+            >
+              Explore Collections
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
 
         </motion.div>
+
+
 
 
 

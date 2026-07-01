@@ -1,11 +1,13 @@
 import Hero from "@/components/home/Hero";
-import Philosophy from "@/components/home/Philosophy";
+// import Philosophy from "@/components/home/Philosophy";
 import Stats from "@/components/home/Stats";
 import AboutUs from "@/components/home/AboutUs";
-import DoorsSection from "@/components/home/DoorsSection";
-import Categories from "@/components/home/Categories";
-// import FeaturedProducts from "@/components/home/FeaturedProducts";
-import FeaturedCollection from "@/components/home/FeaturedCollection";
+// import DoorsSection from "@/components/home/DoorsSection";
+// import Categories from "@/components/home/Categories";
+import ScrollingProducts from "@/components/home/ScrollingProducts";
+import FurnishCorner from "@/components/home/FurnishCorner";
+import VideoCarousel from "@/components/home/VideoCarousel";
+import FeaturedProducts from "@/components/home/FeaturedCollection";
 import Services from "@/components/home/Services";
 import ManufacturingProcess from "@/components/home/ManufacturingProcess";
 import FAQ from "@/components/home/FAQ";
@@ -18,16 +20,19 @@ export default function Home() {
     <HomeWrapper>
       <main id="main-content" className="min-h-screen">
         <Hero />
-        <Philosophy />
-        <FeaturedCollection />
+        <ScrollingProducts />
+        <FurnishCorner />
+        <VideoCarousel />
+        {/* <Philosophy /> */}
+        {/* <FeaturedProducts /> */}
         <Services />
         <Stats />
-        <AboutUs />
+        {/* <AboutUs /> */}
         <ManufacturingProcess />
         {/* <DoorsSection /> */}
         {/* <Categories /> */}
         {/* <FeaturedProducts /> */}
-        <FAQ />
+        {/* <FAQ /> */}
         <CTA />
         <Footer />
       </main>
