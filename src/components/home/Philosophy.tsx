@@ -24,7 +24,7 @@ export default function Philosophy() {
         whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 1.4, ease: [0.25, 1, 0.5, 1] }}
-        className="hidden md:block absolute top-12 left-0 w-[13%] h-[220px] overflow-hidden rounded-lg"
+        className="hidden md:block absolute top-12 left-0 w-[13%] h-[220px] overflow-hidden"
       >
         <motion.div style={{ y: leftImgY, scale: leftImgScale }} className="absolute inset-0">
           <Image
@@ -42,7 +42,7 @@ export default function Philosophy() {
         whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0%)" }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.4, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-        className="hidden md:block absolute bottom-28 right-0 w-[15%] h-[260px] overflow-hidden rounded-lg"
+        className="hidden md:block absolute bottom-28 right-0 w-[15%] h-[260px] overflow-hidden"
       >
         <motion.div style={{ y: rightImgY, scale: rightImgScale }} className="absolute inset-0">
           <Image
@@ -135,7 +135,7 @@ export default function Philosophy() {
           whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)" }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
-          className="relative w-1/2 h-[200px] overflow-hidden rounded-lg"
+          className="relative w-1/2 h-[200px] overflow-hidden"
         >
           <Image src="/sun_door_cnc.png" alt="Premium woodwork details" fill className="object-cover" />
         </motion.div>
@@ -144,7 +144,7 @@ export default function Philosophy() {
           whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0%)" }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-          className="relative w-1/2 h-[200px] overflow-hidden rounded-lg"
+          className="relative w-1/2 h-[200px] overflow-hidden"
         >
           <Image src="/door_philosophy.png" alt="Crafted interior space" fill className="object-cover" />
         </motion.div>

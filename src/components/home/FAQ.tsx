@@ -61,7 +61,7 @@ function MobileItem({
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex items-start gap-5 py-6 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 rounded-sm group"
+        className="w-full flex items-start gap-5 py-6 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
       >
         <span
           className={`shrink-0 text-[10px] font-bold tracking-[0.25em] pt-1 transition-colors duration-300 ${
@@ -239,7 +239,7 @@ export default function FAQ() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded"
+                className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
               >
                 Reach out to our team
                 <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-300" strokeWidth={2} />
@@ -319,7 +319,7 @@ export default function FAQ() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded"
+              className="inline-flex items-center gap-2 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
             >
               Reach out to our team
               <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-300" strokeWidth={2} />

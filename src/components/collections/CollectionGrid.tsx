@@ -42,7 +42,7 @@ export default function CollectionGrid() {
                 transition={{ duration: 0.6, delay: (idx % 6) * 0.1 }}
                 className="group cursor-pointer h-full"
               >
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-200 mb-5 shadow-sm hover:shadow-xl transition-shadow duration-700">
+                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-200 mb-5 shadow-sm hover:shadow-xl transition-shadow duration-700">
                   <Image
                     src={collection.image}
                     alt={collection.name}
@@ -61,7 +61,7 @@ export default function CollectionGrid() {
                         {collection.description}
                       </p>
                     </div>
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 group-hover:bg-white transition-colors duration-300 shrink-0">
+                    <div className="bg-white/20 backdrop-blur-sm p-3 group-hover:bg-white transition-colors duration-300 shrink-0">
                       <ArrowUpRight size={18} className="text-white group-hover:text-black transition-colors" />
                     </div>
                   </div>

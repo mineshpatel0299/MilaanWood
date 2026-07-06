@@ -12,21 +12,14 @@ export default function ProductFilter({
   onChange: (cat: string) => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
-      {categories.map((cat) => (
-        <button
-          key={cat}
-          onClick={() => onChange(cat)}
-          className={`relative px-6 py-2.5 text-xs md:text-sm tracking-[0.15em] uppercase rounded-full transition-all duration-300 cursor-pointer border ${
-            active === cat
-              ? "text-white border-neutral-900"
+    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3"> {categories.map((cat) => ( <button key={cat} onClick={() => onChange(cat)} className={`relative px-6 py-2.5 text-xs md:text-sm tracking-[0.15em] uppercase transition-all duration-300 cursor-pointer border ${ active === cat ?"text-white border-neutral-900"
               : "text-neutral-500 border-neutral-200 hover:border-neutral-400 hover:text-neutral-800 bg-white"
           }`}
         >
           {active === cat && (
             <motion.span
               layoutId="activeFilter"
-              className="absolute inset-0 bg-neutral-900 rounded-full"
+              className="absolute inset-0 bg-neutral-900"
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}

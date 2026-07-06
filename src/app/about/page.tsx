@@ -2,6 +2,7 @@ import AboutHero from "@/components/about/AboutHero";
 import OurStory from "@/components/about/OurStory";
 import Craftsmanship from "@/components/about/Craftsmanship";
 import Values from "@/components/about/Values";
+import Leadership from "@/components/about/Leadership";
 import CTA from "@/components/home/CTA";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ export default function AboutPage() {
       <OurStory />
       <Craftsmanship />
       <Values />
+      <Leadership />
       <CTA />
       <Footer />
     </main>

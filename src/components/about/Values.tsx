@@ -50,7 +50,7 @@ export default function Values() {
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-16 h-16 rounded-full border border-neutral-200 flex items-center justify-center mb-8 group-hover:border-[#c1a077] group-hover:bg-[#c1a077]/5 transition-colors duration-500">
+                <div className="w-16 h-16 border border-neutral-200 flex items-center justify-center mb-8 group-hover:border-[#c1a077] group-hover:bg-[#c1a077]/5 transition-colors duration-500">
                   <Icon strokeWidth={1} className="w-8 h-8 text-neutral-400 group-hover:text-[#c1a077] transition-colors duration-500" />
                 </div>
                 <h3 className="text-xl font-medium text-neutral-900 mb-4">{value.title}</h3>

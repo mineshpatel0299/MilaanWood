@@ -22,7 +22,7 @@ export default function FurnishCorner() {
           {/* Right Column: Image and List */}
           <div className="lg:w-2/3 p-8 lg:py-32 lg:px-16 flex flex-col md:flex-row gap-12 lg:gap-16 items-center">
             {/* Image */}
-            <div className="w-full md:w-1/2 aspect-square md:aspect-[4/3.5] relative rounded-[1.25rem] overflow-hidden bg-neutral-100">
+            <div className="w-full md:w-1/2 aspect-square md:aspect-[4/3.5] relative overflow-hidden bg-neutral-100">
               <Image 
                 src="/door_categories.png" 
                 alt="Elevate Every Entrance"
@@ -58,7 +58,7 @@ export default function FurnishCorner() {
               
               <Link 
                 href="/collections"
-                className="inline-flex items-center justify-center bg-[#1c1c1c] text-white px-8 py-3.5 rounded-full text-[14px] font-medium w-max hover:bg-black transition-colors shadow-sm"
+                className="inline-flex items-center justify-center bg-[#1c1c1c] text-white px-8 py-3.5 text-[14px] font-medium w-max hover:bg-black transition-colors shadow-sm"
               >
                 Explore collections
               </Link>

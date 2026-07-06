@@ -1,62 +1,85 @@
 'use client';
 
-import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function CTA() {
   return (
-    <section className="bg-white px-2 md:px-6 pb-16">
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95, y: 30 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
-        className="relative max-w-[1536px] w-full mx-auto bg-[#1a1a1a] text-white rounded-2xl px-8 md:px-24 py-16 md:py-24 flex flex-col items-center text-center overflow-hidden"
-      >
-        {/* Subtle background texture/gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+    <section className="bg-[#0d0d0d] text-white border-b border-white/10">
+      <div className="max-w-[1536px] mx-auto px-6 md:px-16 py-16 md:py-20 flex flex-col md:flex-row md:items-center gap-12 md:gap-16">
 
-        {/* Content */}
-        <div className="relative z-10 max-w-2xl">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-            className="text-3xl md:text-[3.5rem] font-light leading-[1.1] tracking-tight mb-6"
-          >
-            Elevate your space with <span className="italic text-neutral-400">timeless woodwork.</span>
-          </motion.h2>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-            className="text-base md:text-lg text-neutral-400 leading-relaxed mb-10 max-w-xl mx-auto"
-          >
-            Partner with Milan Wood to deliver functional and visually distinctive door systems. Every door we create is a statement of detail, durability, and refined aesthetics.
-          </motion.p>
-          
+        {/* Brand */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:pr-16 md:border-r border-white/10 flex-shrink-0"
+        >
+          <Image
+            src="https://res.cloudinary.com/de4pazo51/image/upload/v1782107736/WhatsApp_Image_2026-06-13_at_18.41.25-removebg-preview_1_e9eayw.png"
+            alt="Milan Wood"
+            width={150}
+            height={50}
+            className="h-11 md:h-12 w-auto object-contain brightness-0 invert mb-5"
+            unoptimized
+          />
+          <p className="text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#c9a568] leading-relaxed">
+            Crafted Entrances.<br />Defining Spaces.
+          </p>
+        </motion.div>
+
+        {/* Newsletter */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="max-w-xl"
           >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-neutral-200 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a1a] cursor-pointer group"
-            >
-              Partner With Us
-              <div className="bg-black text-white rounded-full p-2 group-hover:translate-x-1 transition-transform duration-300">
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </div>
-            </Link>
+            <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-[#c9a568] mb-4 block">
+              Let&apos;s Keep In Touch
+            </span>
+            <h2 className="text-3xl md:text-5xl font-light leading-[1.1] tracking-tight mb-4">
+              Request our newsletter
+            </h2>
+            <p className="text-neutral-400 leading-relaxed text-sm md:text-base">
+              Be the first to discover new collections, projects and design insights.
+            </p>
           </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            onSubmit={(e) => e.preventDefault()}
+            aria-label="Newsletter signup"
+            className="flex-shrink-0"
+          >
+            <label htmlFor="cta-email" className="sr-only">Email address</label>
+            <div className="flex items-center border border-[#c9a568]/60 hover:border-[#c9a568] transition-colors duration-300 focus-within:border-[#c9a568]">
+              <input
+                id="cta-email"
+                type="email"
+                placeholder="Your email"
+                autoComplete="email"
+                required
+                className="bg-transparent outline-none w-32 md:w-44 pl-5 pr-2 py-4 text-sm text-white placeholder:text-neutral-500"
+              />
+              <button
+                type="submit"
+                className="flex items-center gap-3 border-l border-[#c9a568]/60 px-6 py-4 text-[11px] font-medium tracking-[0.2em] uppercase text-[#c9a568] hover:bg-[#c9a568] hover:text-black transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a568] whitespace-nowrap"
+              >
+                Request Newsletter
+                <ArrowRight size={14} />
+              </button>
+            </div>
+          </motion.form>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

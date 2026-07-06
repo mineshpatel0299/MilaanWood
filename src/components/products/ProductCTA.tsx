@@ -12,7 +12,7 @@ export default function ProductCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto bg-neutral-950 rounded-3xl px-8 md:px-16 py-16 md:py-20 text-center relative overflow-hidden"
+        className="max-w-7xl mx-auto bg-neutral-950 px-8 md:px-16 py-16 md:py-20 text-center relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(139,61,48,0.15),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,61,48,0.1),transparent_50%)]" />
@@ -29,10 +29,10 @@ export default function ProductCTA() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-7 py-3.5 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
+            className="inline-flex items-center gap-4 bg-[#8b3d30] hover:bg-[#7a3428] text-white px-7 py-3.5 text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
           >
             Request Custom Door
-            <div className="bg-white/20 rounded-full p-1.5 group-hover:translate-x-1 transition-transform duration-300">
+            <div className="bg-white/20 p-1.5 group-hover:translate-x-1 transition-transform duration-300">
               <ArrowRight size={14} strokeWidth={3} />
             </div>
           </Link>

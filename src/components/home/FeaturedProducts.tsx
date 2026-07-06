@@ -37,7 +37,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
       className="group cursor-pointer"
     >
       {/* Image container */}
-      <div className="relative h-[400px] md:h-[550px] w-full mb-6 overflow-hidden bg-[#f7f7f7] rounded-[1.5rem] md:rounded-[2rem]">
+      <div className="relative h-[400px] md:h-[550px] w-full mb-6 overflow-hidden bg-[#f7f7f7]">
         <Image
           src={product.image}
           alt={product.name}
@@ -48,7 +48,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none" />
 
         {/* Top-Left Cutout */}
-        <div className="absolute top-0 left-0 bg-white px-4 py-2 md:px-5 md:py-3 rounded-br-[1.5rem] z-10">
+        <div className="absolute top-0 left-0 bg-white px-4 py-2 md:px-5 md:py-3 z-10">
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500">
             Featured
           </span>
@@ -62,7 +62,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         </div>
 
         {/* Bottom-Right Cutout */}
-        <div className="absolute bottom-0 right-0 bg-white pl-4 pt-3 pr-3 pb-3 md:pl-5 md:pt-4 md:pr-3 md:pb-3 rounded-tl-[1.5rem] z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1">
+        <div className="absolute bottom-0 right-0 bg-white pl-4 pt-3 pr-3 pb-3 md:pl-5 md:pt-4 md:pr-3 md:pb-3 z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1">
           <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-900">
             Explore <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </span>

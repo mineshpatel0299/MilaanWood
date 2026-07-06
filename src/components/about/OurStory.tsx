@@ -31,14 +31,20 @@ export default function OurStory() {
             className="flex flex-col md:flex-row gap-8 md:gap-12 items-start"
           >
             <div className="w-full md:w-1/2">
+              <h3 className="text-xl md:text-2xl text-neutral-900 font-medium tracking-tight mb-4">
+                Crafting Premium Spaces With Timeless Woodwork
+              </h3>
               <p className="text-lg md:text-2xl text-neutral-900 font-light leading-relaxed mb-6">
-                For over three decades, Milan Wood has stood at the intersection of traditional woodworking and modern architectural design.
+                Milan Wood is a trusted name in the world of premium wooden doors and interior solutions, delivering exceptional craftsmanship across residential and commercial projects.
+              </p>
+              <p className="text-neutral-500 leading-relaxed mb-4">
+                Every door we create is more than a product—it is a statement of detail, durability, and refined aesthetics. From CNC-engineered designs to fully customized door systems, we bring together advanced manufacturing and skilled craftsmanship to elevate modern spaces.
               </p>
               <p className="text-neutral-500 leading-relaxed">
-                What began as a small atelier dedicated to hand-carving solid teak has evolved into a premier design house for luxury entrances. We believe a door is more than a boundary—it is the handshake of a home, the first impression of a sanctuary.
+                With a growing portfolio of projects across India, Milan Wood partners with architects, interior designers, and discerning clients to deliver solutions that are both functional and visually distinctive.
               </p>
             </div>
-            <div className="w-full md:w-1/2 relative aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200">
+            <div className="w-full md:w-1/2 relative aspect-[3/4] overflow-hidden bg-neutral-200">
               <Image 
                 src="/door_cat_3.png" 
                 alt="Traditional Woodworking" 
@@ -56,7 +62,7 @@ export default function OurStory() {
             transition={{ duration: 0.8 }}
             className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-end"
           >
-            <div className="w-full md:w-1/2 relative aspect-square rounded-2xl overflow-hidden bg-neutral-200">
+            <div className="w-full md:w-1/2 relative aspect-square overflow-hidden bg-neutral-200">
               <Image 
                 src="/mw_cd_217.png" 
                 alt="Modern Design" 
@@ -65,9 +71,12 @@ export default function OurStory() {
               />
             </div>
             <div className="w-full md:w-1/2 pb-8">
-              <h3 className="text-xl md:text-2xl text-neutral-900 font-medium mb-4">Uncompromising Quality</h3>
+              <h3 className="text-xl md:text-2xl text-neutral-900 font-medium mb-4">Setting New Benchmarks In Wood Design</h3>
               <p className="text-neutral-500 leading-relaxed mb-6">
-                Every piece of wood that enters our facility is rigorously inspected, kiln-dried to perfection, and treated to withstand the test of time. Our artisans combine state-of-the-art CNC precision with meticulous hand-finishing techniques to ensure every curve, bevel, and joint is flawless.
+                Milan Wood stands as a trusted name in premium wooden interiors, delivering refined door solutions across residential and commercial spaces. Our growing presence reflects a strong foundation built on quality, precision, and consistency.
+              </p>
+              <p className="text-neutral-500 leading-relaxed">
+                With a focus on advanced manufacturing and design excellence, we collaborate with architects, designers, and developers to bring distinctive concepts to life. Every project reflects our commitment to durability, detailing, and timeless aesthetics.
               </p>
             </div>
           </motion.div>

@@ -5,8 +5,8 @@ import Navbar from "../Navbar";
 
 export default function CollectionHero() {
   return (
-    <div className="bg-white p-2 md:p-5 w-full">
-      <div className="relative h-[calc(100vh-1rem)] md:h-[calc(100vh-2.5rem)] w-full overflow-hidden bg-neutral-900 font-sans rounded-[1.5rem] md:rounded-[2rem]">
+    <div className="bg-white w-full">
+      <div className="relative h-screen w-full overflow-hidden bg-neutral-900 font-sans">
         <video
           src="/kk.mp4"
           autoPlay
@@ -18,7 +18,7 @@ export default function CollectionHero() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
 
-        <Navbar variant="center" />
+        <Navbar />
 
         <motion.div
           initial="hidden"

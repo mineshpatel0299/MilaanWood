@@ -95,7 +95,7 @@ export default function FeaturedProducts() {
               className="group cursor-pointer"
             >
               <Link href={`/collections/${product.collectionSlug}`} className="block h-full">
-                <div className="bg-[#f5f3f0] rounded-2xl overflow-hidden transition-shadow duration-500 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]">
+                <div className="bg-[#f5f3f0] overflow-hidden transition-shadow duration-500 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]">
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image
@@ -122,7 +122,7 @@ export default function FeaturedProducts() {
                       <h3 className="text-xl md:text-2xl font-light tracking-tight text-neutral-900">
                         {product.name}
                       </h3>
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-neutral-900 group-hover:border-neutral-900 transition-all duration-500">
+                      <div className="flex-shrink-0 w-10 h-10 border border-neutral-200 flex items-center justify-center group-hover:bg-neutral-900 group-hover:border-neutral-900 transition-all duration-500">
                         <ArrowRight
                           size={16}
                           className="text-neutral-400 group-hover:text-white transition-colors duration-500"

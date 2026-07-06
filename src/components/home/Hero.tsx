@@ -8,8 +8,8 @@ import Navbar from '../Navbar';
 export default function Hero() {
 
   return (
-    <div className="bg-white p-2 md:p-5 w-full min-h-screen">
-      <div className="relative h-[calc(100vh-1rem)] md:h-[calc(100vh-2.5rem)] w-full overflow-hidden bg-neutral-900 font-sans rounded-[1.5rem] md:rounded-[2rem]">
+    <div className="bg-white w-full min-h-screen">
+      <div className="relative h-screen w-full overflow-hidden bg-neutral-900 font-sans">
 
         {/* Background Video */}
         <video
@@ -69,7 +69,7 @@ export default function Hero() {
           >
             <Link
               href="/collections"
-              className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1)] group"
+              className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3.5 text-sm font-medium hover:bg-white hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1)] group"
             >
               Explore Collections
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />

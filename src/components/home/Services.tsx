@@ -37,18 +37,14 @@ export default function Services() {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24 pb-20 md:pb-32 px-4 md:px-8">
-      <div 
+    <section className="bg-white py-16 md:py-24 pb-20 md:pb-32">
+      <div
         ref={ref as React.RefObject<HTMLDivElement>}
         className="transition-all duration-1000 ease-out"
         style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}
       >
-        <h2 className="text-center text-lg md:text-2xl font-medium tracking-[0.2em] uppercase text-neutral-900 mb-10 md:mb-16">
-          Crafting Premium Spaces
-        </h2>
-
-        {/* Full width container with rounded corners */}
-        <div className="relative w-full max-w-[1536px] mx-auto h-[750px] md:h-[700px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
+        <h2 className="text-center text-lg md:text-2xl font-medium tracking-[0.2em] uppercase text-neutral-900 mb-10 md:mb-16 px-4 md:px-8"> Crafting Premium Spaces </h2>
+        <div className="relative w-full h-[820px] md:h-[800px] overflow-hidden">
           
           {/* Background Images */}
           <AnimatePresence initial={false}>
@@ -84,7 +80,7 @@ export default function Services() {
                   key={service.id}
                   onMouseEnter={() => handleActivate(idx)}
                   onClick={() => handleActivate(idx)}
-                  animate={{ flex: isHovered ? 2 : 1 }}
+                  animate={{ flex: isHovered ? 2.6 : 1 }}
                   transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
                   role="button"
                   tabIndex={0}

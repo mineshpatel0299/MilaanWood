@@ -17,7 +17,7 @@ export default function Craftsmanship() {
     <section ref={containerRef} className="bg-[#0a0a0a] px-6 md:px-16 lg:px-24 py-24 md:py-40 relative overflow-hidden">
       
       {/* Ambient lighting */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#c1a077]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#c1a077]/5 blur-[150px] pointer-events-none" />
       
       <div className="max-w-[1400px] mx-auto relative z-10">
         
@@ -48,7 +48,7 @@ export default function Craftsmanship() {
           
           {/* Large Parallax Image */}
           <div className="w-full lg:w-1/2">
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-neutral-900 border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            <div className="relative aspect-[4/5] overflow-hidden bg-neutral-900 border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
               <motion.div style={{ y: imgY }} className="absolute inset-0 w-full h-[130%]">
                 <Image 
                   src="/door_cat_4.png" // Representing craftsmanship

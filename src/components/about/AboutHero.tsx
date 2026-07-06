@@ -6,8 +6,8 @@ import Navbar from "../Navbar";
 
 export default function AboutHero() {
   return (
-    <div className="bg-neutral-50 p-2 md:p-5 w-full">
-      <div className="relative h-[calc(100vh-1rem)] md:h-[calc(100vh-2.5rem)] w-full overflow-hidden bg-neutral-900 font-sans rounded-[1.5rem] md:rounded-[2rem]">
+    <div className="bg-neutral-50 w-full">
+      <div className="relative h-screen w-full overflow-hidden bg-neutral-900 font-sans">
         <Image
           src="/door_featured_3.png" // Dark, moody image for the hero
           alt="Milan Wood Craftsmanship"
@@ -19,7 +19,7 @@ export default function AboutHero() {
         {/* Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
 
-        <Navbar variant="center" />
+        <Navbar />
 
         {/* Hero Content */}
         <motion.div

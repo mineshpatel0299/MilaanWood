@@ -70,7 +70,7 @@ export default function ScrollingProducts() {
           {[...products, ...products].map((product, index) => (
             <div
               key={`${product.id}-${index}`}
-              className="relative flex-shrink-0 w-[260px] h-[340px] md:w-[280px] md:h-[360px] rounded-3xl overflow-hidden group cursor-pointer mr-4"
+              className="relative flex-shrink-0 w-[260px] h-[340px] md:w-[280px] md:h-[360px] overflow-hidden group cursor-pointer mr-4"
             >
               <Image
                 src={product.image}

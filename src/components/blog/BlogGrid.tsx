@@ -24,7 +24,7 @@ export default function BlogGrid() {
         >
           <Link href={`/blog/${featuredPost.slug}`} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
             {/* Image */}
-            <div className="w-full lg:w-[60%] relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-neutral-100">
+            <div className="w-full lg:w-[60%] relative aspect-[16/10] overflow-hidden bg-neutral-100">
               <Image 
                 src={featuredPost.coverImage} 
                 alt={featuredPost.title}
@@ -36,7 +36,7 @@ export default function BlogGrid() {
             {/* Content */}
             <div className="w-full lg:w-[40%] flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-neutral-900 border border-neutral-900 px-3 py-1 rounded-full">
+                <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-neutral-900 border border-neutral-900 px-3 py-1">
                   {featuredPost.category}
                 </span>
                 <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-400">
@@ -75,7 +75,7 @@ export default function BlogGrid() {
               className="group cursor-pointer flex flex-col"
             >
               <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[1rem] bg-neutral-100 mb-6">
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-neutral-100 mb-6">
                   <Image 
                     src={post.coverImage} 
                     alt={post.title}

@@ -166,7 +166,7 @@ export default function ProductGrid() {
                 transition={{ duration: 0.6, delay: idx * 0.06 }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-neutral-200 mb-5 shadow-sm hover:shadow-xl transition-shadow duration-700">
+                <div className="relative aspect-[3/4] overflow-hidden bg-neutral-200 mb-5 shadow-sm hover:shadow-xl transition-shadow duration-700">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -178,7 +178,7 @@ export default function ProductGrid() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
 
                   {product.tag && (
-                    <span className="absolute top-5 left-5 bg-white/90 backdrop-blur-md text-neutral-900 text-[9px] tracking-[0.25em] uppercase font-bold px-4 py-2 rounded-full border border-white/50">
+                    <span className="absolute top-5 left-5 bg-white/90 backdrop-blur-md text-neutral-900 text-[9px] tracking-[0.25em] uppercase font-bold px-4 py-2 border border-white/50">
                       {product.tag}
                     </span>
                   )}
@@ -188,7 +188,7 @@ export default function ProductGrid() {
                       <p className="text-white/80 text-xs tracking-[0.2em] uppercase">
                         {product.material}
                       </p>
-                      <div className="bg-white rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-300">
+                      <div className="bg-white p-3 shadow-lg hover:scale-110 transition-transform duration-300">
                         <ArrowUpRight size={16} className="text-neutral-900" />
                       </div>
                     </div>

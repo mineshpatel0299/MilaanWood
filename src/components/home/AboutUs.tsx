@@ -91,7 +91,7 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-          className="md:w-7/12 relative h-[450px] md:h-[700px] w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-100 group cursor-pointer order-1 md:order-2"
+          className="md:w-7/12 relative h-[450px] md:h-[700px] w-full overflow-hidden bg-neutral-100 group cursor-pointer order-1 md:order-2"
         >
           <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
             <Image
@@ -103,7 +103,7 @@ export default function AboutUs() {
           </motion.div>
 
           {/* Top-Left Cutout (Year) */}
-          <div className="absolute top-0 left-0 bg-white px-5 py-3 md:px-8 md:py-5 rounded-br-[1.5rem] md:rounded-br-[2rem] z-10">
+          <div className="absolute top-0 left-0 bg-white px-5 py-3 md:px-8 md:py-5 z-10">
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-neutral-900">
               EST. 2018
             </span>
@@ -117,8 +117,8 @@ export default function AboutUs() {
           </div>
 
           {/* Bottom-Right Cutout (Action) */}
-          <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 rounded-tl-[1.5rem] md:rounded-tl-[2rem] z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
-            <Link href="/about" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded">
+          <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
+            <Link href="/about" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900">
               Meet Our Team <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </Link>
             {/* Inverted curves */}

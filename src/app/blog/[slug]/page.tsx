@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: Props) {
     <main className="min-h-screen bg-white">
       {/* Custom transparent navbar for the article */}
       <div className="absolute top-0 left-0 w-full z-50 p-2 md:p-5">
-         <Navbar variant="center" />
+         <Navbar />
       </div>
 
       {/* Article Header (Full Bleed Image) */}
@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
         
         <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-6 md:px-16 pb-16 md:pb-24 max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-white border border-white/30 px-3 py-1 rounded-full backdrop-blur-sm">
+            <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-white border border-white/30 px-3 py-1 backdrop-blur-sm">
               {post.category}
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-white/70">
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Article Footer */}
           <div className="mt-32 pt-16 border-t border-neutral-200 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-400 font-sans font-medium">
+            <div className="w-12 h-12 bg-neutral-100 flex items-center justify-center text-neutral-400 font-sans font-medium">
               {post.author.charAt(0)}
             </div>
             <div>
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           
           <div className="flex gap-4">
-            <button className="text-[10px] tracking-[0.2em] uppercase font-medium text-neutral-500 hover:text-neutral-900 transition-colors font-sans border border-neutral-200 px-4 py-2 rounded-full">
+            <button className="text-[10px] tracking-[0.2em] uppercase font-medium text-neutral-500 hover:text-neutral-900 transition-colors font-sans border border-neutral-200 px-4 py-2">
               Share Article
             </button>
           </div>

@@ -124,8 +124,8 @@ export default function DoorsSection() {
                 }`}
               >
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex h-2.5 w-2.5 bg-white"></span>
                 </span>
                 <span className="text-[9px] font-bold tracking-[0.2em] text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   Tap to Open

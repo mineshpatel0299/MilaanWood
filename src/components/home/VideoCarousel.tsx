@@ -37,7 +37,7 @@ export default function VideoCarousel() {
           return (
             <motion.div
               key={index}
-              className="absolute top-1/2 left-1/2 w-[85vw] md:w-[65vw] max-w-[1000px] aspect-[4/3] md:aspect-video rounded-[1.5rem] overflow-hidden cursor-pointer shadow-xl"
+              className="absolute top-1/2 left-1/2 w-[85vw] md:w-[65vw] max-w-[1000px] aspect-[4/3] md:aspect-video overflow-hidden cursor-pointer shadow-xl"
               initial={{
                 x: `calc(-50% + ${offset * 100}% + ${offset * 32}px)`,
                 y: "-50%",
@@ -71,10 +71,10 @@ export default function VideoCarousel() {
                   offset === 0 ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <button className="w-16 h-16 md:w-[84px] md:h-[84px] bg-white rounded-full flex items-center justify-center mb-5 hover:scale-110 transition-transform shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                <button className="w-16 h-16 md:w-[84px] md:h-[84px] bg-white flex items-center justify-center mb-5 hover:scale-110 transition-transform shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                   <Play fill="black" size={32} className="text-black ml-2" />
                 </button>
-                <div className="bg-[#1a1a1a] text-white px-6 py-2.5 rounded-full text-[15px] font-medium shadow-lg">
+                <div className="bg-[#1a1a1a] text-white px-6 py-2.5 text-[15px] font-medium shadow-lg">
                   {video.title}
                 </div>
               </div>
@@ -83,15 +83,7 @@ export default function VideoCarousel() {
         })}
       </div>
       
-      <div className="flex justify-center items-center gap-3 mt-10 md:mt-16">
-        {videos.map((_, i) => {
-          const currentArrayIdx = ((active % videos.length) + videos.length) % videos.length;
-          return (
-            <button 
-              key={i}
-              onClick={() => handleDotClick(i)}
-              className={`h-2.5 rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                i === currentArrayIdx ? "bg-black w-10" : "bg-neutral-300 hover:bg-neutral-400 w-2.5"
+      <div className="flex justify-center items-center gap-3 mt-10 md:mt-16"> {videos.map((_, i) => { const currentArrayIdx = ((active % videos.length) + videos.length) % videos.length; return ( <button key={i} onClick={() => handleDotClick(i)} className={`h-2.5 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${ i === currentArrayIdx ?"bg-black w-10" : "bg-neutral-300 hover:bg-neutral-400 w-2.5"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
