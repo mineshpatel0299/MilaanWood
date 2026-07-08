@@ -32,7 +32,7 @@ export default function CollectionGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {collections.map((collection, idx) => (
             <Link href={`/collections/${collection.slug}`} key={collection.id}>
               <motion.div

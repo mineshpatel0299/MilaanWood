@@ -57,35 +57,35 @@ export default function CollectionProducts({ collection }: { collection: Collect
   };
 
   const FilterSidebar = () => (
-    <div className="w-full">
-      <div className="flex items-center justify-between mb-8">
-        <h3 className="text-[#c1a077] text-[10px] tracking-[0.3em] uppercase font-bold">Filters</h3>
+    <div className="w-full bg-[#111]/40 border border-white/5 p-6 lg:p-8 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+      <div className="flex items-center justify-between mb-10 pb-6 border-b border-white/10">
+        <h3 className="text-white text-[11px] tracking-[0.3em] uppercase font-medium">Refine Selection</h3>
         {(selectedMaterials.length > 0 || selectedColors.length > 0 || selectedPriceRanges.length > 0) && (
           <button 
             onClick={() => { setSelectedMaterials([]); setSelectedColors([]); setSelectedPriceRanges([]); }}
-            className="text-white/40 hover:text-white text-[10px] tracking-widest uppercase transition-colors"
+            className="text-white/40 hover:text-[#c1a077] text-[10px] tracking-widest uppercase transition-all duration-300 border-b border-transparent hover:border-[#c1a077] pb-0.5"
           >
-            Clear All
+            Reset
           </button>
         )}
       </div>
 
       {/* Filter Section: Material */}
       <div className="mb-10">
-        <h4 className="text-white text-xs uppercase tracking-widest mb-4">Material</h4>
-        <div className="flex flex-col gap-3">
+        <h4 className="text-[#c1a077] text-[10px] uppercase tracking-[0.2em] mb-5 font-semibold">Material</h4>
+        <div className="flex flex-col gap-3.5">
           {allMaterials.map(material => (
-            <label key={material} className="flex items-center gap-3 cursor-pointer group">
+            <label key={material} className="flex items-center gap-4 cursor-pointer group">
               <input 
                 type="checkbox" 
                 className="hidden" 
                 checked={selectedMaterials.includes(material)}
                 onChange={() => toggleFilter(setSelectedMaterials, material)}
               />
-              <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${selectedMaterials.includes(material) ? 'border-[#c1a077] bg-[#c1a077]' : 'border-white/20 group-hover:border-[#c1a077]/50'}`}>
-                {selectedMaterials.includes(material) && <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full" />}
+              <div className={`w-4 h-4 border flex items-center justify-center transition-all duration-500 ${selectedMaterials.includes(material) ? 'border-[#c1a077] bg-[#c1a077]/10' : 'border-white/10 group-hover:border-white/30'}`}>
+                <div className={`w-2 h-2 bg-[#c1a077] transition-all duration-500 ${selectedMaterials.includes(material) ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
               </div>
-              <span className={`text-sm font-light transition-colors ${selectedMaterials.includes(material) ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>{material}</span>
+              <span className={`text-[13px] tracking-wide font-light transition-colors duration-300 ${selectedMaterials.includes(material) ? 'text-white' : 'text-white/40 group-hover:text-white/80'}`}>{material}</span>
             </label>
           ))}
         </div>
@@ -93,41 +93,41 @@ export default function CollectionProducts({ collection }: { collection: Collect
 
       {/* Filter Section: Color */}
       <div className="mb-10">
-        <h4 className="text-white text-xs uppercase tracking-widest mb-4">Color</h4>
-        <div className="flex flex-col gap-3">
+        <h4 className="text-[#c1a077] text-[10px] uppercase tracking-[0.2em] mb-5 font-semibold">Color</h4>
+        <div className="flex flex-col gap-3.5">
           {allColors.map(color => (
-            <label key={color} className="flex items-center gap-3 cursor-pointer group">
+            <label key={color} className="flex items-center gap-4 cursor-pointer group">
               <input 
                 type="checkbox" 
                 className="hidden" 
                 checked={selectedColors.includes(color)}
                 onChange={() => toggleFilter(setSelectedColors, color)}
               />
-              <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${selectedColors.includes(color) ? 'border-[#c1a077] bg-[#c1a077]' : 'border-white/20 group-hover:border-[#c1a077]/50'}`}>
-                {selectedColors.includes(color) && <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full" />}
+              <div className={`w-4 h-4 border flex items-center justify-center transition-all duration-500 ${selectedColors.includes(color) ? 'border-[#c1a077] bg-[#c1a077]/10' : 'border-white/10 group-hover:border-white/30'}`}>
+                <div className={`w-2 h-2 bg-[#c1a077] transition-all duration-500 ${selectedColors.includes(color) ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
               </div>
-              <span className={`text-sm font-light transition-colors ${selectedColors.includes(color) ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>{color}</span>
+              <span className={`text-[13px] tracking-wide font-light transition-colors duration-300 ${selectedColors.includes(color) ? 'text-white' : 'text-white/40 group-hover:text-white/80'}`}>{color}</span>
             </label>
           ))}
         </div>
       </div>
 
       {/* Filter Section: Price Range */}
-      <div className="mb-10">
-        <h4 className="text-white text-xs uppercase tracking-widest mb-4">Price Range</h4>
-        <div className="flex flex-col gap-3">
+      <div className="mb-2">
+        <h4 className="text-[#c1a077] text-[10px] uppercase tracking-[0.2em] mb-5 font-semibold">Price Range</h4>
+        <div className="flex flex-col gap-3.5">
           {priceRanges.map(range => (
-            <label key={range.label} className="flex items-center gap-3 cursor-pointer group">
+            <label key={range.label} className="flex items-center gap-4 cursor-pointer group">
               <input 
                 type="checkbox" 
                 className="hidden" 
                 checked={selectedPriceRanges.includes(range.label)}
                 onChange={() => toggleFilter(setSelectedPriceRanges, range.label)}
               />
-              <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${selectedPriceRanges.includes(range.label) ? 'border-[#c1a077] bg-[#c1a077]' : 'border-white/20 group-hover:border-[#c1a077]/50'}`}>
-                {selectedPriceRanges.includes(range.label) && <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full" />}
+              <div className={`w-4 h-4 border flex items-center justify-center transition-all duration-500 ${selectedPriceRanges.includes(range.label) ? 'border-[#c1a077] bg-[#c1a077]/10' : 'border-white/10 group-hover:border-white/30'}`}>
+                <div className={`w-2 h-2 bg-[#c1a077] transition-all duration-500 ${selectedPriceRanges.includes(range.label) ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
               </div>
-              <span className={`text-sm font-light transition-colors ${selectedPriceRanges.includes(range.label) ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>{range.label}</span>
+              <span className={`text-[13px] tracking-wide font-light transition-colors duration-300 ${selectedPriceRanges.includes(range.label) ? 'text-white' : 'text-white/40 group-hover:text-white/80'}`}>{range.label}</span>
             </label>
           ))}
         </div>
@@ -193,11 +193,13 @@ export default function CollectionProducts({ collection }: { collection: Collect
       </section>
 
       {/* 2. Premium Grid Layout with Sidebar */}
-      <section className="px-4 md:px-12 lg:px-20 py-16 md:py-24 max-w-[1600px] mx-auto bg-[#0a0a0a] z-20 relative overflow-hidden">
+      <section className="px-4 md:px-12 lg:px-20 py-16 md:py-24 max-w-[1600px] mx-auto bg-[#0a0a0a] z-20 relative">
         
         {/* Soft Ambient Spotlight Effects in the Background */}
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-[#c1a077]/5 blur-[120px] pointer-events-none -translate-x-1/2" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#c1a077]/5 blur-[100px] pointer-events-none translate-x-1/2" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-[#c1a077]/5 blur-[120px] -translate-x-1/2" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#c1a077]/5 blur-[100px] translate-x-1/2" />
+        </div>
 
         {/* Mobile Filter Toggle */}
         <div className="lg:hidden flex items-center justify-between mb-8 relative z-10">
@@ -214,7 +216,7 @@ export default function CollectionProducts({ collection }: { collection: Collect
         <div className="flex flex-col lg:flex-row gap-12 xl:gap-24 relative z-10">
           
           {/* Desktop Sidebar */}
-          <div className="hidden lg:block w-[240px] flex-shrink-0">
+          <div className="hidden lg:block w-[280px] flex-shrink-0">
             <div className="sticky top-32">
               <FilterSidebar />
             </div>
@@ -227,7 +229,7 @@ export default function CollectionProducts({ collection }: { collection: Collect
               <p className="text-white/40 text-xs tracking-widest uppercase">{filteredProducts.length} Results</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl">
               <AnimatePresence mode="popLayout">
                 {filteredProducts.map((product, idx) => (
                   <ProductGridCard key={product.id} product={product} index={idx} />
