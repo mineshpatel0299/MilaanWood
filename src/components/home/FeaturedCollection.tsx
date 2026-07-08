@@ -34,9 +34,9 @@ export default function FeaturedProducts() {
                 hidden: { opacity: 0, y: 15 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
               }}
-              className="text-[10px] md:text-[11px] tracking-[0.5em] text-neutral-400 uppercase mb-6 md:mb-8"
+              className="text-[10px] md:text-[11px] tracking-[0.5em] text-[#c1a077] font-semibold uppercase mb-6 md:mb-8"
             >
-              Featured Products
+              Curated Selection
             </motion.p>
             <motion.h2
               variants={{
@@ -48,10 +48,10 @@ export default function FeaturedProducts() {
                   transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] },
                 },
               }}
-              className="text-3xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight text-neutral-900"
             >
               Signature{" "}
-              <span className="italic text-neutral-400">Products</span>
+              <span className="italic text-neutral-400">Masterpieces</span>
             </motion.h2>
           </div>
 
@@ -63,19 +63,19 @@ export default function FeaturedProducts() {
           >
             <Link
               href="/collections"
-              className="inline-flex items-center gap-2 text-[10px] md:text-xs tracking-[0.3em] uppercase text-neutral-900 hover:text-neutral-500 transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-[10px] md:text-xs tracking-[0.3em] font-medium uppercase text-neutral-900 hover:text-[#c1a077] transition-colors duration-300 group"
             >
-              View All
+              View Gallery
               <ArrowUpRight
                 size={14}
-                className="text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                className="text-neutral-400 group-hover:text-[#c1a077] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
               />
             </Link>
           </motion.div>
         </div>
 
         {/* Products grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
@@ -94,23 +94,23 @@ export default function FeaturedProducts() {
               }}
               className="group cursor-pointer"
             >
-              <Link href={`/collections/${product.collectionSlug}`} className="block h-full">
-                <div className="bg-[#f5f3f0] overflow-hidden transition-shadow duration-500 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]">
+              <Link href={`/product/${product.id}`} className="block h-full">
+                <div className="bg-[#faf9f8] border border-neutral-100 overflow-hidden transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-1">
                   {/* Image */}
-                  <div className="relative aspect-[3/4] overflow-hidden">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover transition-transform duration-[1.8s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.06]"
+                      className="object-cover transition-transform duration-[1.8s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.08]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
 
                   {/* Info panel */}
-                  <div className="px-6 py-6 md:px-7 md:py-7">
-                    <div className="flex items-center justify-between mb-3">
-                      <p className="text-[9px] md:text-[10px] tracking-[0.4em] uppercase text-neutral-400 max-w-[60%] truncate">
+                  <div className="px-6 py-8 md:px-8 md:py-8 bg-white">
+                    <div className="flex items-center justify-between mb-4">
+                      <p className="text-[9px] md:text-[10px] tracking-[0.4em] font-medium uppercase text-[#c1a077] max-w-[60%] truncate">
                         {product.collectionName}
                       </p>
                       <p className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-neutral-400 text-right">
@@ -119,10 +119,10 @@ export default function FeaturedProducts() {
                     </div>
 
                     <div className="flex items-end justify-between gap-4">
-                      <h3 className="text-xl md:text-2xl font-light tracking-tight text-neutral-900">
+                      <h3 className="text-xl md:text-2xl font-light tracking-tight text-neutral-900 group-hover:text-[#c1a077] transition-colors duration-500">
                         {product.name}
                       </h3>
-                      <div className="flex-shrink-0 w-10 h-10 border border-neutral-200 flex items-center justify-center group-hover:bg-neutral-900 group-hover:border-neutral-900 transition-all duration-500">
+                      <div className="flex-shrink-0 w-11 h-11 border border-neutral-200 rounded-full flex items-center justify-center group-hover:bg-[#c1a077] group-hover:border-[#c1a077] transition-all duration-500">
                         <ArrowRight
                           size={16}
                           className="text-neutral-400 group-hover:text-white transition-colors duration-500"

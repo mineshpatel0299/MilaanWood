@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
 
@@ -9,6 +10,7 @@ const LEADERS = [
     eyebrow: "Our Founder",
     initials: "J",
     name: "Jyoti",
+    image: "/team/jyoti.jpg",
     title: "A Legacy of Precision and Design",
     quote: "Every detail matters—from material selection to final execution.",
     paragraphs: [
@@ -21,6 +23,7 @@ const LEADERS = [
     eyebrow: "Director",
     initials: "AD",
     name: "Abhinav Dhingra",
+    image: "/team/abhinav-dhingra.jpg",
     title: "Strong Leadership",
     quote: "Detail matters, execution is flawless, every outcome aligns with modern luxury.",
     paragraphs: [
@@ -30,6 +33,34 @@ const LEADERS = [
     ],
   },
 ];
+
+/** Circular portrait with graceful fallback to initials if the image hasn't been uploaded yet. */
+function Avatar({ src, initials, active }: { src: string; initials: string; active: boolean }) {
+  const [errored, setErrored] = useState(false);
+
+  return (
+    <div
+      className={`relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border shrink-0 transition-colors duration-500 ${
+        active ? "border-[#c1a077]" : "border-white/15"
+      }`}
+    >
+      {!errored ? (
+        <Image
+          src={src}
+          alt={initials}
+          fill
+          sizes="64px"
+          className={`object-cover transition-all duration-500 ${active ? "grayscale-0" : "grayscale opacity-60"}`}
+          onError={() => setErrored(true)}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-white/5">
+          <span className={`text-sm font-light ${active ? "text-[#c1a077]" : "text-white/30"}`}>{initials}</span>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Leadership() {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -84,10 +115,8 @@ export default function Leadership() {
                       className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#c1a077]"
                     />
                   )}
-                  <div className="flex items-baseline gap-4 md:gap-6 pl-6">
-                    <span className={`text-xs font-light transition-colors duration-500 ${isActive ? "text-[#c1a077]" : "text-white/30"}`}>
-                      0{idx + 1}
-                    </span>
+                  <div className="flex items-center gap-5 md:gap-6 pl-6">
+                    <Avatar src={leader.image} initials={leader.initials} active={isActive} />
                     <div>
                       <h3
                         className={`text-2xl md:text-4xl font-light tracking-tight transition-colors duration-500 ${

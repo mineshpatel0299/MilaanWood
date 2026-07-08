@@ -5,6 +5,7 @@ export interface Product {
   image: string;
   tag: string | null;
   material: string;
+  color: string;
 }
 
 export interface Collection {
@@ -16,7 +17,7 @@ export interface Collection {
   products: Product[];
 }
 
-const placeholderProducts = [
+const placeholderProducts: Omit<Product, 'id' | 'name'>[] & { id: string, name: string }[] = [
   {
     id: "p1",
     name: "Classic Panel",
@@ -24,6 +25,7 @@ const placeholderProducts = [
     image: "/mw_cd_217.png",
     tag: "Bestseller",
     material: "Solid Teak",
+    color: "Walnut",
   },
   {
     id: "p2",
@@ -32,6 +34,7 @@ const placeholderProducts = [
     image: "/door_cat_2.png",
     tag: null,
     material: "Engineered Wood",
+    color: "Matte Black",
   },
   {
     id: "p3",
@@ -40,6 +43,7 @@ const placeholderProducts = [
     image: "/sun_door_cnc.png",
     tag: "Premium",
     material: "Mahogany",
+    color: "Ebony",
   },
   {
     id: "p4",
@@ -48,6 +52,7 @@ const placeholderProducts = [
     image: "/contemporary_door.png",
     tag: "New",
     material: "Oak & Glass",
+    color: "Natural Ash",
   },
   {
     id: "p5",
@@ -56,6 +61,7 @@ const placeholderProducts = [
     image: "/door_featured.png",
     tag: "Exclusive",
     material: "Rosewood",
+    color: "Rich Cherry",
   },
   {
     id: "p6",
@@ -64,6 +70,7 @@ const placeholderProducts = [
     image: "/door_featured_3.png",
     tag: null,
     material: "Pine Wood",
+    color: "White Oak",
   },
 ];
 

@@ -23,6 +23,7 @@ export default function Home() {
         <Hero />
         {/* <ScrollingProducts /> */}
         <FurnishCorner />
+        <FeaturedProducts />
         <VideoCarousel />
         {/* <Philosophy /> */}
         {/* <FeaturedProducts /> */}

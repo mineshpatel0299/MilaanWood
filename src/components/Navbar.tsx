@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -50,47 +50,65 @@ export default function Navbar() {
         initial={false}
         animate={{ y: isVisible ? 0 : -120 }}
         transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-        className="fixed top-0 left-0 right-0 z-[60] px-3 md:px-5 pt-3 md:pt-4 pointer-events-none"
+        className="fixed top-0 left-0 right-0 z-[60] pointer-events-none"
       >
-        <nav className="pointer-events-auto mx-auto max-w-4xl flex items-center justify-between gap-6 md:gap-10 bg-white/80 backdrop-blur-xl px-5 md:px-8 py-3 rounded-full shadow-lg shadow-black/5 border border-white/50">
-          <Link href="/" className="flex items-center flex-shrink-0 group" aria-label="Milan Wood Home">
-            <Image
-              src="https://res.cloudinary.com/de4pazo51/image/upload/v1782107736/WhatsApp_Image_2026-06-13_at_18.41.25-removebg-preview_1_e9eayw.png"
-              alt="Milan Wood"
-              width={130}
-              height={44}
-              className="h-7 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04] brightness-0"
-              priority
-              unoptimized
-            />
-          </Link>
+        <nav className="pointer-events-auto w-full flex items-center justify-between bg-black px-6 md:px-12 lg:px-24 py-5 border-b border-[#c1a077]">
+          
+          {/* Left: Logo */}
+          <div className="flex-1 flex items-center justify-start">
+            <Link href="/" className="flex items-center flex-shrink-0 group" aria-label="Milan Wood Home">
+              <Image
+                src="https://res.cloudinary.com/de4pazo51/image/upload/v1782107736/WhatsApp_Image_2026-06-13_at_18.41.25-removebg-preview_1_e9eayw.png"
+                alt="Milan Wood"
+                width={130}
+                height={44}
+                className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04] brightness-0 invert"
+                priority
+                unoptimized
+              />
+            </Link>
+          </div>
 
-          <div className="hidden md:flex items-center gap-1">
+          {/* Center: Navigation Links */}
+          <div className="hidden md:flex flex-1 items-center justify-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`relative px-4 py-1.5 text-sm font-normal rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 ${
+                className={`relative py-1 text-base tracking-wide font-light transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 ${
                   activeLink === link.label
-                    ? 'text-neutral-900'
-                    : 'text-neutral-500 hover:text-neutral-800'
+                    ? 'text-white'
+                    : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 {link.label}
                 {activeLink === link.label && (
-                  <span className="absolute inset-0 rounded-full bg-neutral-900/[0.06] -z-10" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#c1a077] transform origin-left" />
                 )}
               </Link>
             ))}
           </div>
 
-          <button
-            className="md:hidden flex items-center justify-center text-neutral-900 hover:text-neutral-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 rounded-md"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open mobile menu"
-          >
-            <Menu size={22} strokeWidth={2} />
-          </button>
+          {/* Right: Search & Mobile Menu */}
+          <div className="flex-1 flex items-center justify-end gap-6">
+            <div className="hidden md:flex items-center border-b border-white/30 focus-within:border-white transition-colors pb-1 w-[180px] lg:w-[240px]">
+              <Search size={18} className="text-white/60 mr-3" />
+              <input 
+                 type="text" 
+                 placeholder="Search..." 
+                 className="bg-transparent border-none outline-none text-white text-[15px] font-light w-full placeholder:text-white/40 focus:ring-0"
+              />
+            </div>
+
+            <button
+              className="md:hidden flex items-center justify-center text-white hover:text-neutral-300 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-md"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open mobile menu"
+            >
+              <Menu size={24} strokeWidth={1.5} />
+            </button>
+          </div>
+
         </nav>
       </motion.div>
 
