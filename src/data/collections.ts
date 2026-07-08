@@ -17,7 +17,7 @@ export interface Collection {
   products: Product[];
 }
 
-const placeholderProducts: Omit<Product, 'id' | 'name'>[] & { id: string, name: string }[] = [
+const placeholderProducts: Product[] = [
   {
     id: "p1",
     name: "Classic Panel",
