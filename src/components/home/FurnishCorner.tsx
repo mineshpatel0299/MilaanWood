@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export default function FurnishCorner() {
+  return (
     <section className="bg-white py-24 md:py-32 lg:py-48 overflow-hidden">
       <div className="max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
         <div className="flex flex-col lg:flex-row gap-20 lg:gap-32 items-center">
@@ -68,4 +69,5 @@ export default function FurnishCorner() {
         </div>
       </div>
     </section>
+  );
 }
