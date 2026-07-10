@@ -17,28 +17,28 @@ import Footer from "@/components/Footer";
 import HomeWrapper from "@/components/home/HomeWrapper";
 
 export default function Home() {
-  return (
-    <HomeWrapper>
-      <main id="main-content" className="min-h-screen">
-        <Hero />
-        {/* <ScrollingProducts /> */}
-        <FurnishCorner />
-        <FeaturedProducts />
-        <VideoCarousel />
-        {/* <Philosophy /> */}
-        {/* <FeaturedProducts /> */}
-        <Services />
-        <Stats />
-        {/* <AboutUs /> */}
-        <ManufacturingProcess />
-        {/* <DoorsSection /> */}
-        {/* <Categories /> */}
-        {/* <FeaturedProducts /> */}
-        {/* <FAQ /> */}
-        <BlogSection />
-        <CTA />
-        <Footer />
-      </main>
-    </HomeWrapper>
-  );
+ return (
+ <HomeWrapper>
+ <main id="main-content" className="min-h-screen">
+ <Hero />
+ {/* <ScrollingProducts /> */}
+ <FurnishCorner />
+ <FeaturedProducts />
+ <VideoCarousel />
+ {/* <Philosophy /> */}
+ {/* <FeaturedProducts /> */}
+ <Services />
+ <Stats />
+ {/* <AboutUs /> */}
+ <ManufacturingProcess />
+ {/* <DoorsSection /> */}
+ {/* <Categories /> */}
+ {/* <FeaturedProducts /> */}
+ {/* <FAQ /> */}
+ <BlogSection />
+ <CTA />
+ <Footer />
+ </main>
+ </HomeWrapper>
+ );
 }

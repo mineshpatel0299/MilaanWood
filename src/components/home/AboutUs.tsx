@@ -7,132 +7,132 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { useRef } from 'react';
 
 export default function AboutUs() {
-  const prefersReducedMotion = useReducedMotion();
-  const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
+ const prefersReducedMotion = useReducedMotion();
+ const containerRef = useRef<HTMLElement>(null);
+ const { scrollYProgress } = useScroll({
+ target: containerRef,
+ offset: ["start end", "end start"]
+ });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["-15%", "15%"]);
+ const imageY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["-15%", "15%"]);
 
-  return (
-    <section ref={containerRef} className="bg-white text-black py-24 md:py-32 px-4 md:px-16 font-sans overflow-hidden">
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
-        
-        {/* Left: Text Content */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
-          }}
-          className="md:w-5/12 flex flex-col justify-center order-2 md:order-1 px-2 md:px-0"
-        >
-          <div className="mb-8 md:mb-12">
-            <motion.h2 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-neutral-500 mb-4"
-            >
-              Our Story
-            </motion.h2>
-            <motion.h3 
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 1, 0.5, 1] } }
-              }}
-              className="text-4xl md:text-6xl font-light leading-[1.15] text-neutral-900 tracking-tight"
-            >
-              Precision & <br className="md:hidden" /><span className="italic text-neutral-400">design intelligence.</span>
-            </motion.h3>
-          </div>
-          
-          <div className="relative pl-6 md:pl-8">
-            {/* Accent Line */}
-            <motion.div 
-              variants={{
-                hidden: { scaleY: 0 },
-                visible: { scaleY: 1, transition: { duration: 1.5, ease: "easeInOut" } }
-              }}
-              style={{ originY: 0 }}
-              className="absolute left-0 top-2 bottom-2 w-px bg-neutral-200" 
-            />
-            
-            <motion.p 
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="text-base md:text-lg text-neutral-600 leading-relaxed mb-6 md:mb-8"
-            >
-              Milan Wood is a trusted name in the world of premium wooden doors and interior solutions, delivering exceptional craftsmanship across residential and commercial projects. Our work is defined by precision, design intelligence, and an uncompromising commitment to quality.
-            </motion.p>
-            
-            <motion.p 
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="text-base md:text-lg text-neutral-600 leading-relaxed mb-10 md:mb-12"
-            >
-              From CNC-engineered designs to fully customized door systems, we bring together advanced manufacturing and skilled craftsmanship to elevate modern spaces. Our approach is rooted in consistency, attention to detail, and a deep understanding of material and design.
-            </motion.p>
-          </div>
-        </motion.div>
+ return (
+ <section ref={containerRef} className="bg-white text-black py-24 md:py-32 px-4 md:px-16 font-sans overflow-hidden">
+ <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
+ 
+ {/* Left: Text Content */}
+ <motion.div 
+ initial="hidden"
+ whileInView="visible"
+ viewport={{ once: true, margin: "-100px" }}
+ variants={{
+ hidden: {},
+ visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
+ }}
+ className="md:w-5/12 flex flex-col justify-center order-2 md:order-1 px-2 md:px-0"
+ >
+ <div className="mb-8 md:mb-12">
+ <motion.h2 
+ variants={{
+ hidden: { opacity: 0, y: 20 },
+ visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+ }}
+ className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-neutral-500 mb-4"
+ >
+ Our Story
+ </motion.h2>
+ <motion.h3 
+ variants={{
+ hidden: { opacity: 0, y: 30 },
+ visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 1, 0.5, 1] } }
+ }}
+ className="text-4xl md:text-6xl font-light leading-[1.15] text-neutral-900 tracking-tight"
+ >
+ Precision & <br className="md:hidden" /><span className=" text-neutral-400">design intelligence.</span>
+ </motion.h3>
+ </div>
+ 
+ <div className="relative pl-6 md:pl-8">
+ {/* Accent Line */}
+ <motion.div 
+ variants={{
+ hidden: { scaleY: 0 },
+ visible: { scaleY: 1, transition: { duration: 1.5, ease: "easeInOut" } }
+ }}
+ style={{ originY: 0 }}
+ className="absolute left-0 top-2 bottom-2 w-px bg-neutral-200" 
+ />
+ 
+ <motion.p 
+ variants={{
+ hidden: { opacity: 0, x: -20 },
+ visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+ }}
+ className="text-base md:text-lg text-neutral-600 leading-relaxed mb-6 md:mb-8"
+ >
+ Milan Wood is a trusted name in the world of premium wooden doors and interior solutions, delivering exceptional craftsmanship across residential and commercial projects. Our work is defined by precision, design intelligence, and an uncompromising commitment to quality.
+ </motion.p>
+ 
+ <motion.p 
+ variants={{
+ hidden: { opacity: 0, x: -20 },
+ visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+ }}
+ className="text-base md:text-lg text-neutral-600 leading-relaxed mb-10 md:mb-12"
+ >
+ From CNC-engineered designs to fully customized door systems, we bring together advanced manufacturing and skilled craftsmanship to elevate modern spaces. Our approach is rooted in consistency, attention to detail, and a deep understanding of material and design.
+ </motion.p>
+ </div>
+ </motion.div>
 
-        {/* Right: Cutout Image */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-          className="md:w-7/12 relative h-[450px] md:h-[700px] w-full overflow-hidden bg-neutral-100 group cursor-pointer order-1 md:order-2"
-        >
-          <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
-            <Image
-              src="/door_our_story.png"
-              alt="Artisan workshop"
-              fill
-              className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]"
-            />
-          </motion.div>
+ {/* Right: Cutout Image */}
+ <motion.div 
+ initial={{ opacity: 0, scale: 0.95 }}
+ whileInView={{ opacity: 1, scale: 1 }}
+ viewport={{ once: true, margin: "-100px" }}
+ transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+ className="md:w-7/12 relative h-[450px] md:h-[700px] w-full overflow-hidden bg-neutral-100 group cursor-pointer order-1 md:order-2"
+ >
+ <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
+ <Image
+ src="/door_our_story.png"
+ alt="Artisan workshop"
+ fill
+ className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]"
+ />
+ </motion.div>
 
-          {/* Top-Left Cutout (Year) */}
-          <div className="absolute top-0 left-0 bg-white px-5 py-3 md:px-8 md:py-5 z-10">
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-neutral-900">
-              EST. 2018
-            </span>
-            {/* Inverted curves */}
-            <svg className="absolute top-0 -right-[1.5rem] md:-right-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
-            </svg>
-            <svg className="absolute left-0 -bottom-[1.5rem] md:-bottom-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
-            </svg>
-          </div>
+ {/* Top-Left Cutout (Year) */}
+ <div className="absolute top-0 left-0 bg-white px-5 py-3 md:px-8 md:py-5 z-10">
+ <span className="text-[10px] md:text-xs font-bold tracking-wide text-neutral-900">
+ EST. 2018
+ </span>
+ {/* Inverted curves */}
+ <svg className="absolute top-0 -right-[1.5rem] md:-right-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+ <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+ </svg>
+ <svg className="absolute left-0 -bottom-[1.5rem] md:-bottom-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+ <path d="M0 0H32C14.3269 0 0 14.3269 0 32V0Z" />
+ </svg>
+ </div>
 
-          {/* Bottom-Right Cutout (Action) */}
-          <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
-            <Link href="/about" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-neutral-900 hover:text-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900">
-              Meet Our Team <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-            </Link>
-            {/* Inverted curves */}
-            <svg className="absolute bottom-0 -left-[1.5rem] md:-left-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
-            </svg>
-            <svg className="absolute -top-[1.5rem] md:-top-[2rem] right-0 w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
-              <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
-            </svg>
-          </div>
+ {/* Bottom-Right Cutout (Action) */}
+ <div className="absolute bottom-0 right-0 bg-white pl-5 pt-4 pr-4 pb-4 md:pl-8 md:pt-6 md:pr-6 md:pb-6 z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500">
+ <Link href="/about" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-wide text-neutral-900 hover:text-neutral-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900">
+ Meet Our Team <ArrowUpRight size={14} className="md:w-4 md:h-4 text-neutral-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+ </Link>
+ {/* Inverted curves */}
+ <svg className="absolute bottom-0 -left-[1.5rem] md:-left-[2rem] w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+ <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+ </svg>
+ <svg className="absolute -top-[1.5rem] md:-top-[2rem] right-0 w-[1.5rem] md:w-[2rem] h-[1.5rem] md:h-[2rem] text-white pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+ <path d="M32 32H0C17.6731 32 32 17.6731 32 0V32Z" />
+ </svg>
+ </div>
 
-        </motion.div>
+ </motion.div>
 
-      </div>
-    </section>
-  );
+ </div>
+ </section>
+ );
 }
