@@ -29,7 +29,7 @@ export default function PartnersMarquee() {
     <section className="bg-white py-14 md:py-20 border-b border-neutral-200">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center mb-8 md:mb-12">
         <p className="text-[11px] md:text-xs uppercase tracking-[0.2em] text-neutral-400 font-medium">
-          Trusted by Leading Architects, Builders &amp; Real Estate Names
+          People Who Trust Us
         </p>
       </div>
 
