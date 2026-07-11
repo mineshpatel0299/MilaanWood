@@ -22,9 +22,9 @@ export default function Home() {
  <HomeWrapper>
  <main id="main-content" className="min-h-screen">
  <Hero />
- <PartnersMarquee />
  {/* <ScrollingProducts /> */}
  <FurnishCorner />
+ <PartnersMarquee />
  <FeaturedProducts />
  <VideoCarousel />
  {/* <Philosophy /> */}
