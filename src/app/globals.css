@@ -44,3 +44,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
+
+@keyframes partners-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-partners-marquee {
+  animation: partners-marquee 32s linear infinite;
+}
+
+.animate-partners-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-partners-marquee {
+    animation: none;
+  }
+}

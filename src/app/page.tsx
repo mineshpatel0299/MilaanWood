@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import PartnersMarquee from "@/components/home/PartnersMarquee";
 // import Philosophy from "@/components/home/Philosophy";
 import Stats from "@/components/home/Stats";
 import AboutUs from "@/components/home/AboutUs";
@@ -21,6 +22,7 @@ export default function Home() {
  <HomeWrapper>
  <main id="main-content" className="min-h-screen">
  <Hero />
+ <PartnersMarquee />
  {/* <ScrollingProducts /> */}
  <FurnishCorner />
  <FeaturedProducts />
